@@ -16,4 +16,10 @@
     <string name="logout_btn">Logout</string>
 
     //Strings for AddBookActivity
+    <string name="book_title_input">Book Title</string>
+    <string name="book_author_input">Book Author</string>
+    <string name="nop_input">No. of Pages</string>
+    <string name="noc_input">No. of Chapters</string>
+    <string name="todo">TODO</string>
+    <string name="number_of_chapters">Number of Chapters</string>
 </resources>
