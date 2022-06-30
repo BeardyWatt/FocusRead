@@ -14,7 +14,10 @@
         android:theme="@style/Theme.FocusRead"
         tools:targetApi="31">
         <activity
-            android:name=".HomeScreen"
+            android:name=".AddBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
