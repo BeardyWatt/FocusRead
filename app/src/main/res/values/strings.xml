@@ -1,0 +1,17 @@
+<resources>
+
+    //Strings for LoginScreen
+    <string name="app_name">FocusRead</string>
+    <string name="welcome">Welcome to Focus Read</string>
+    <string name="login_btn">Login</string>
+    <string name="register_btn">Register</string>
+    <string name="privacy">Privacy</string>
+    <string name="forgot_password">Forgot Password?</string>
+
+    //Strings for HomeScreen
+    <string name="book_list_btn">View Book List</string>
+    <string name="add_new_book_btn">Add New Book</string>
+    <string name="read_reminder_btn">Set Read Reminder</string>
+    <string name="view_stats_btn">View Stats</string>
+    <string name="logout_btn">Logout</string>
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fblue"
+    tools:context=".HomeScreen">
+
+    <ImageView
+        android:id="@+id/logo_2"
+        android:layout_width="156dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/frlogo2" />
+
+    <Button
+        android:id="@+id/view_book_list_btn"
+        android:layout_width="287dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="35dp"
+        android:background="@color/fpurple"
+        android:text="@string/book_list_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/book_icon_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_2" />
+
+    <Button
+        android:id="@+id/add_new_book_btn"
+        android:layout_width="287dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/fpurple"
+        android:text="@string/add_new_book_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/add_icon_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_book_list_btn" />
+
+    <Button
+        android:id="@+id/set_read_reminder_btn"
+        android:layout_width="287dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/fpurple"
+        android:text="@string/read_reminder_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/clock_icon_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_new_book_btn" />
+
+    <Button
+        android:id="@+id/view_stats_btn"
+        android:layout_width="287dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/fpurple"
+        android:text="@string/view_stats_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/stat_icon_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_read_reminder_btn" />
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="287dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/fpurple"
+        android:text="@string/logout_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/logout_icon_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_stats_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
