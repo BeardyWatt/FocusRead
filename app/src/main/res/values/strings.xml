@@ -1,6 +1,6 @@
 <resources>
 
-    //Strings for LoginActivity
+    <!--Strings for LoginActivity -->
     <string name="app_name">FocusRead</string>
     <string name="welcome">Welcome to Focus Read</string>
     <string name="login_btn">Login</string>
@@ -8,18 +8,32 @@
     <string name="privacy">Privacy</string>
     <string name="forgot_password">Forgot Password?</string>
 
-    //Strings for HomeScreenActivity
+    <!-- Strings for HomeScreenActivity-->
     <string name="book_list_btn">View Book List</string>
     <string name="add_new_book_btn">Add New Book</string>
     <string name="read_reminder_btn">Set Read Reminder</string>
     <string name="view_stats_btn">View Stats</string>
     <string name="logout_btn">Logout</string>
 
-    //Strings for AddBookActivity
+    <!--Strings for AddBookActivity -->
     <string name="book_title_input">Book Title</string>
     <string name="book_author_input">Book Author</string>
     <string name="nop_input">No. of Pages</string>
     <string name="noc_input">No. of Chapters</string>
     <string name="todo">TODO</string>
     <string name="number_of_chapters">Number of Chapters</string>
+
+    <!--Strings for RegisterActivity -->
+    <string name="create_account">Create an Account</string>
+    <string name="user_agreement">By creating an account you agree to our</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="and">and</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <!--Strings for UserAgreementActivity -->
+    <string name="user_agreement_title">User Agreement</string>
+    <string name="user_agreement_page">to be filled</string>
+    <string name="user_agreement_back_btn">Back</string>
+
+
 </resources>
