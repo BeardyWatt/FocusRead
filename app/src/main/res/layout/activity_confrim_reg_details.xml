@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fblue"
+    android:background="@color/f_blue"
     tools:context=".ConfirmRegDetailsActivity">
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_width="100dp"
         android:layout_height="99dp"
         android:layout_marginTop="32dp"
-        android:background="@color/fblue"
+        android:background="@color/f_blue"
         android:src="@android:drawable/ic_dialog_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

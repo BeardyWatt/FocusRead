@@ -22,6 +22,7 @@
     <string name="noc_input">No. of Chapters</string>
     <string name="todo">TODO</string>
     <string name="number_of_chapters">Number of Chapters</string>
+    <string name="home_btn">Return to Home Screen</string>
 
     <!--Strings for RegisterActivity -->
     <string name="create_account">Create an Account</string>
@@ -52,4 +53,30 @@
     <string name="congrats_title">Congratulations!</string>
     <string name="congrats_bio">You are now a verified member of Focus Read</string>
     <string name="congrats_btn">Lets Get Started</string>
+
+    <!--Strings for BookAddSuccessActivity -->
+    <string name="book_add_success_title">Book\n Successfully Added To List</string>
+    <string name="place_holder_tv">Place Holder</string>
+    <string name="start_read_btn">Start Read</string>
+
+    <!--Strings for BookListActivity -->
+    <string name="book_list_title">Book List</string>
+
+    <!--Strings for SetupReadActivity -->
+    <string name="setup_title">Set Start Point</string>
+
+    <!--Strings for ReadInProgressReadActivity -->
+    <string name="pause_btn">Pause Read</string>
+    <string name="continue_btn">Continue Read</string>
+    <string name="end_btn">End Read</string>
+
+    <!--Strings for SessionFinishedActivity -->
+    <string name="session_finished_title">Session Finished</string>
+    <string name="started_from">Started From:</string>
+    <string name="target">Target:</string>
+    <string name="end_page">Ended on page:</string>
+    <string name="log_read_btn">Log the Read</string>
+    
+
+
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.hfad.focusread" >
+    package="com.hfad.focusread">
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FocusRead"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".ReadInProgessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SessionFinishedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SetupReadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookAddSuccessActivity"
+            android:exported="false" />
         <activity
             android:name=".CongratsMainActivity"
             android:exported="false" />
@@ -42,7 +57,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

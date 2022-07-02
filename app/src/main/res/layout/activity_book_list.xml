@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f_blue"
+    tools:context=".BookListActivity">
+
+    <ImageView
+        android:id="@+id/logo_2"
+        android:layout_width="156dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fr_logo2" />
+
+    <TextView
+        android:id="@+id/bookListTitle"
+        android:layout_width="221dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/book_list_title"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_2"
+        tools:ignore="TextContrastCheck" />
+
+    <ScrollView
+        android:id="@+id/bookListLst"
+        android:layout_width="374dp"
+        android:layout_height="413dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookListTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/add_new_book_btn"
+        android:layout_width="374dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/fpurple"
+        android:text="@string/add_new_book_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/add_icon_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookListLst" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

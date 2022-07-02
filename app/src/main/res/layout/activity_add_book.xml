@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fblue"
+    android:background="@color/f_blue"
     tools:context=".AddBookActivity">
 
     <ImageView
@@ -12,12 +12,12 @@
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginTop="50dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/frlogo2"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/fr_logo2" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/book_title_input_layout"
@@ -62,8 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Book Author"
-            android:inputType="text"
-             />
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -115,4 +114,31 @@
             android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/add_new_book_btn"
+        android:layout_width="341dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/fpurple"
+        android:text="@string/add_new_book_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/add_icon_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noc_input_layout" />
+
+    <Button
+        android:id="@+id/return_home_btn"
+        android:layout_width="341dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/fpurple"
+        app:icon="@drawable/rtn_home_icon_foreground"
+        android:textSize="16sp"
+        android:text="@string/home_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_new_book_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

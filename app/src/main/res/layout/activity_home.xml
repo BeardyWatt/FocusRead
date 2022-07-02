@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fblue"
+    android:background="@color/f_blue"
     tools:context=".HomeActivity">
 
     <ImageView
@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/frlogo2" />
+        app:srcCompat="@drawable/fr_logo2" />
 
     <Button
         android:id="@+id/view_book_list_btn"
