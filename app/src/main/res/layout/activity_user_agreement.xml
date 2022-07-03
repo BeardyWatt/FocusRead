@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/userAgreementScroll"
+        android:id="@+id/user_agreement_scroll"
         android:layout_width="341dp"
         android:layout_height="531dp"
         android:layout_marginTop="28dp"
@@ -39,7 +39,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/UA_back_btn"
+        android:id="@+id/u_a_back_btn"
         android:layout_width="169dp"
         android:layout_height="49dp"
         android:layout_marginTop="8dp"
@@ -49,5 +49,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userAgreementScroll" />
+        app:layout_constraintTop_toBottomOf="@+id/user_agreement_scroll" />
 </androidx.constraintlayout.widget.ConstraintLayout>

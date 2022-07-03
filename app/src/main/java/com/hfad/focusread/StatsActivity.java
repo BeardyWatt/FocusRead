@@ -7,30 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class AddBookActivity extends AppCompatActivity {
+public class StatsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_book);
-
-        Button addBookToListBtn = findViewById(R.id.add_another_book_to_list_btn);
-        addBookToListBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AddBookActivity.this,BookAddSuccessActivity.class);
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_stats);
 
         Button returnHomeBtn = findViewById(R.id.return_home_btn);
         returnHomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddBookActivity.this,HomeActivity.class);
+                Intent intent = new Intent(StatsActivity.this,HomeActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }

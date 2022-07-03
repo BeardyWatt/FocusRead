@@ -1,6 +1,6 @@
 <resources>
 
-    <!--Strings for LoginActivity -->
+    <!--Strings for login_activity -->
     <string name="app_name">FocusRead</string>
     <string name="welcome">Welcome to Focus Read</string>
     <string name="login_btn">Login</string>
@@ -8,75 +8,87 @@
     <string name="privacy">Privacy</string>
     <string name="forgot_password">Forgot Password?</string>
 
-    <!-- Strings for HomeScreenActivity-->
+    <!-- Strings for home_screen_activity-->
     <string name="book_list_btn">View Book List</string>
     <string name="add_new_book_btn">Add New Book</string>
     <string name="read_reminder_btn">Set Read Reminder</string>
     <string name="view_stats_btn">View Stats</string>
     <string name="logout_btn">Logout</string>
 
-    <!--Strings for AddBookActivity -->
+    <!--Strings for add_book_activity -->
     <string name="book_title_input">Book Title</string>
     <string name="book_author_input">Book Author</string>
     <string name="nop_input">No. of Pages</string>
     <string name="noc_input">No. of Chapters</string>
     <string name="todo">TODO</string>
     <string name="number_of_chapters">Number of Chapters</string>
+    <string name="add_book_btn">Add Book To List</string>
     <string name="home_btn">Return to Home Screen</string>
 
-    <!--Strings for RegisterActivity -->
+    <!--Strings for register_activity -->
     <string name="create_account">Create an Account</string>
     <string name="user_agreement">By creating an account you agree to our</string>
     <string name="terms_and_conditions">Terms and Conditions</string>
     <string name="and">and</string>
     <string name="privacy_policy">Privacy Policy</string>
 
-    <!--Strings for UserAgreementActivity -->
+    <!--Strings for user_agreement_activity -->
     <string name="user_agreement_title">User Agreement</string>
     <string name="user_agreement_page">to be filled user agreement</string>
     <string name="user_agreement_back_btn">Back</string>
 
-    <!--Strings for PrivacyPolicyActivity -->
+    <!--Strings for privacy_policy_activity -->
     <string name="privacy_title">Privacy Policy</string>
     <string name="privacy_page">to be filled privacy</string>
     <string name="privacy_btn">Back</string>
 
-    <!--Strings for ConfirmRegDetailActivity -->
+    <!--Strings for confirm_reg_detail_activity -->
     <string name="confirm_reg_detail_title">Confirm your details</string>
     <string name="confirm_reg_detail_bio1">Almost there! We sent an email to:</string>
     <string name="confirm_reg_detail_email">-useremail@mail.com-</string>
-    <string name="confirm_reg_detail_bio2">Please click on the link to confirm your details and finish registering. You may need to check your spam folder.:</string>
+    <string name="confirm_reg_detail_bio2">Please click on the link to confirm your details and finish registering. You may need to check your spam folder.</string>
     <string name="no_email_text">Cant find the email?</string>
     <string name="resend_btn">Resend Email</string>
 
-    <!--Strings for CongratsActivity -->
+    <!--Strings for congrats_activity -->
     <string name="congrats_title">Congratulations!</string>
     <string name="congrats_bio">You are now a verified member of Focus Read</string>
     <string name="congrats_btn">Lets Get Started</string>
 
-    <!--Strings for BookAddSuccessActivity -->
+    <!--Strings for book_add_success_activity -->
     <string name="book_add_success_title">Book\n Successfully Added To List</string>
     <string name="place_holder_tv">Place Holder</string>
     <string name="start_read_btn">Start Read</string>
+    <string name="add_another_book_btn">Add Another Book</string>
 
-    <!--Strings for BookListActivity -->
+    <!--Strings for book_list_activity -->
     <string name="book_list_title">Book List</string>
 
-    <!--Strings for SetupReadActivity -->
+    <!--Strings for setup_read_activity -->
     <string name="setup_title">Set Start Point</string>
 
-    <!--Strings for ReadInProgressReadActivity -->
+    <!--Strings for read_in_progress_read_activity -->
     <string name="pause_btn">Pause Read</string>
     <string name="continue_btn">Continue Read</string>
     <string name="end_btn">End Read</string>
 
-    <!--Strings for SessionFinishedActivity -->
+    <!--Strings for session_finished_Activity -->
     <string name="session_finished_title">Session Finished</string>
     <string name="started_from">Started From:</string>
     <string name="target">Target:</string>
     <string name="end_page">Ended on page:</string>
     <string name="log_read_btn">Log the Read</string>
-    
 
+    <!--Strings for session_finished_Activity -->
+    <string name="read_logged_title">Well done! You read:</string>
+    <string name="view_stats_screen_btn">View Stat Screen</string>
+    <string name="set_reminder_btn">Set Reminder for Next Read Session</string>
+
+    <!--Strings for stats_Activity -->
+    <string name="view_stats_title">View Stats</string>
+
+    <!--Strings for set_reminder_Activity -->
+    <string name="set_reminder_title">Next Read Reminder</string>
+    <string name="set_reminder_info">Set a reminder by simply selecting the day then the time you want to schedule your next read reminder below</string>
 
 </resources>

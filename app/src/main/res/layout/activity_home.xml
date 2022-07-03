@@ -23,7 +23,7 @@
         android:layout_width="287dp"
         android:layout_height="79dp"
         android:layout_marginTop="35dp"
-        android:background="@color/fpurple"
+        android:background="@color/f_purple"
         android:text="@string/book_list_btn"
         android:textSize="16sp"
         app:icon="@drawable/book_icon_foreground"
@@ -33,11 +33,11 @@
         app:layout_constraintTop_toBottomOf="@+id/logo_2" />
 
     <Button
-        android:id="@+id/add_new_book_btn"
+        android:id="@+id/add_another_book_to_list_btn"
         android:layout_width="287dp"
         android:layout_height="79dp"
         android:layout_marginTop="16dp"
-        android:background="@color/fpurple"
+        android:background="@color/f_purple"
         android:text="@string/add_new_book_btn"
         android:textSize="16sp"
         app:icon="@drawable/add_icon_foreground"
@@ -51,21 +51,21 @@
         android:layout_width="287dp"
         android:layout_height="79dp"
         android:layout_marginTop="16dp"
-        android:background="@color/fpurple"
+        android:background="@color/f_purple"
         android:text="@string/read_reminder_btn"
         android:textSize="16sp"
         app:icon="@drawable/clock_icon_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_new_book_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/add_another_book_to_list_btn" />
 
     <Button
         android:id="@+id/view_stats_btn"
         android:layout_width="287dp"
         android:layout_height="79dp"
         android:layout_marginTop="16dp"
-        android:background="@color/fpurple"
+        android:background="@color/f_purple"
         android:text="@string/view_stats_btn"
         android:textSize="16sp"
         app:icon="@drawable/stat_icon_foreground"
@@ -79,7 +79,7 @@
         android:layout_width="287dp"
         android:layout_height="79dp"
         android:layout_marginTop="16dp"
-        android:background="@color/fpurple"
+        android:background="@color/f_purple"
         android:text="@string/logout_btn"
         android:textSize="16sp"
         app:icon="@drawable/logout_icon_foreground"

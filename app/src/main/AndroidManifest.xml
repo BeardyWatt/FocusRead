@@ -14,6 +14,18 @@
         android:theme="@style/Theme.FocusRead"
         tools:targetApi="31">
         <activity
+            android:name=".SetReminderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookDetailStatsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StatsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReadLoggedActivity"
+            android:exported="false" />
+        <activity
             android:name=".ReadInProgessActivity"
             android:exported="false" />
         <activity

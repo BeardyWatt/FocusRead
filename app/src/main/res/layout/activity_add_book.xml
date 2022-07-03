@@ -27,6 +27,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@color/white"
+        android:textColorHint="@color/f_purple"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -39,7 +40,7 @@
             android:layout_height="wrap_content"
             android:hint="Book Title"
             android:inputType="text"
-            android:textColorHint="#757575" />
+            android:textColorHint="@color/fgrey" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -50,6 +51,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@color/white"
+        android:textColorHint="@color/f_purple"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -73,6 +75,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@color/white"
+        android:textColorHint="#9C27B0"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -98,11 +101,15 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@color/white"
+        android:textColorHint="@color/f_purple"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nop_input_layout">
+        app:layout_constraintTop_toBottomOf="@id/nop_input_layout"
+        app:placeholderTextColor="@color/black"
+        app:prefixTextColor="@color/black"
+        app:suffixTextColor="@color/black">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -115,12 +122,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/add_new_book_btn"
+        android:id="@+id/add_another_book_to_list_btn"
         android:layout_width="341dp"
         android:layout_height="85dp"
         android:layout_marginTop="24dp"
-        android:background="@color/fpurple"
-        android:text="@string/add_new_book_btn"
+        android:background="@color/f_purple"
+        android:text="@string/add_book_btn"
         android:textSize="16sp"
         app:icon="@drawable/add_icon_foreground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,13 +139,13 @@
         android:layout_width="341dp"
         android:layout_height="85dp"
         android:layout_marginTop="16dp"
-        android:background="@color/fpurple"
+        android:background="@color/f_purple"
         app:icon="@drawable/rtn_home_icon_foreground"
         android:textSize="16sp"
         android:text="@string/home_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_new_book_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/add_another_book_to_list_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

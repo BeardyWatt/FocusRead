@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/fr_logo2" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/session_finished_title"
         android:layout_width="306dp"
         android:layout_height="126dp"
         android:layout_marginTop="40dp"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo_2" />
 
     <LinearLayout
-        android:id="@+id/linearLayoutStart"
+        android:id="@+id/linear_layout_start"
         android:layout_width="382dp"
         android:layout_height="31dp"
         android:layout_marginTop="1dp"
@@ -43,10 +43,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/session_finished_title">
 
         <TextView
-            android:id="@+id/startFromTV"
+            android:id="@+id/start_from_tv"
             android:layout_width="19dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -54,7 +54,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/startResultTV"
+            android:id="@+id/start_result_tv"
             android:layout_width="4dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -63,7 +63,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linerLayoutTarget"
+        android:id="@+id/liner_layout_target"
         android:layout_width="379dp"
         android:layout_height="33dp"
         android:layout_marginTop="8dp"
@@ -71,10 +71,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutStart">
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout_start">
 
         <TextView
-            android:id="@+id/targetTV"
+            android:id="@+id/target_tv"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -82,7 +82,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/targetSetTV"
+            android:id="@+id/targetSet_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -91,7 +91,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/endPageTV"
+        android:id="@+id/end_page_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -100,24 +100,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linerLayoutTarget" />
+        app:layout_constraintTop_toBottomOf="@+id/liner_layout_target" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutEndPage"
+        android:id="@+id/text_input_layout_end_page"
         android:layout_width="150dp"
         android:layout_height="35dp"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="493dp">
+        android:layout_marginTop="9dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/end_page_tv">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputPageEndedOn"
+            android:id="@+id/input_page_ended_on"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="eg.123" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/logReadBtn"
+        android:id="@+id/log_read_btn"
         android:layout_width="265dp"
         android:layout_height="100dp"
         android:layout_marginTop="60dp"
@@ -127,7 +129,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEndPage"
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_end_page"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

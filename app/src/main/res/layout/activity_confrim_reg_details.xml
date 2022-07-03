@@ -8,11 +8,12 @@
     tools:context=".ConfirmRegDetailsActivity">
 
     <TextView
-        android:id="@+id/confirmRegDetailTitle"
+        android:id="@+id/confirm_reg_detail_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/confirm_reg_detail_title"
+        android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,50 +22,52 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageViewEmail"
+        android:id="@+id/image_view_email"
         android:layout_width="100dp"
         android:layout_height="99dp"
         android:layout_marginTop="32dp"
         android:background="@color/f_blue"
+        android:contentDescription="TODO"
         android:src="@android:drawable/ic_dialog_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmRegDetailTitle"
-        android:contentDescription="TODO" />
+        app:layout_constraintTop_toBottomOf="@+id/confirm_reg_detail_title" />
 
     <TextView
-        android:id="@+id/confirmRegBio1"
+        android:id="@+id/confirm_reg_bio1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/confirm_reg_detail_bio1"
+        android:textAlignment="center"
         android:textColor="#3E2723"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/image_view_email" />
 
     <TextView
-        android:id="@+id/userRegEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/user_reg_email"
+        android:layout_width="166dp"
+        android:layout_height="25dp"
         android:layout_marginTop="8dp"
         android:text="@string/confirm_reg_detail_email"
+        android:textAlignment="center"
         android:textColor="#3E2723"
         android:textSize="16sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmRegBio1" />
+        app:layout_constraintTop_toBottomOf="@+id/confirm_reg_bio1" />
 
     <TextView
-        android:id="@+id/confirmRegBio2"
-        android:layout_width="253dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="46dp"
+        android:id="@+id/confirm_reg_bio2"
+        android:layout_width="275dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="16dp"
         android:text="@string/confirm_reg_detail_bio2"
         android:textAlignment="center"
         android:textColor="#3E2723"
@@ -72,10 +75,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userRegEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/user_reg_email" />
 
     <TextView
-        android:id="@+id/noEmailTextView"
+        android:id="@+id/no_email_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -85,10 +88,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmRegBio2" />
+        app:layout_constraintTop_toBottomOf="@+id/confirm_reg_bio2" />
 
     <Button
-        android:id="@+id/noEmailBtn"
+        android:id="@+id/no_email_btn"
         android:layout_width="178dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
@@ -97,5 +100,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noEmailTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/no_email_tv" />
 </androidx.constraintlayout.widget.ConstraintLayout>

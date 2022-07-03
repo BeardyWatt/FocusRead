@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/f_blue"
-    tools:context=".BookListActivity">
+    tools:context=".StatsActivity">
 
     <ImageView
         android:id="@+id/logo_2"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/fr_logo2" />
 
     <TextView
-        android:id="@+id/book_list_title"
+        android:id="@+id/view_stats_title"
         android:layout_width="221dp"
         android:layout_height="53dp"
         android:layout_marginTop="12dp"
@@ -35,34 +35,36 @@
         tools:ignore="Text_contrast_check" />
 
     <ScrollView
-        android:id="@+id/book_list_lst"
-        android:layout_width="374dp"
-        android:layout_height="413dp"
+        android:id="@+id/book_stat_list_lst"
+        android:layout_width="367dp"
+        android:layout_height="374dp"
         android:layout_marginTop="8dp"
-        android:background="@color/white"
+        android:background="@color/purple_500"
+        android:contentDescription="@string/place_holder_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_list_title">
+        app:layout_constraintTop_toBottomOf="@+id/view_stats_title">
 
         <LinearLayout
+            android:id="@+id/stats_list_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
     </ScrollView>
 
     <Button
-        android:id="@+id/add_another_book_to_list_btn"
-        android:layout_width="374dp"
-        android:layout_height="82dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/return_home_btn"
+        android:layout_width="329dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="16dp"
         android:background="@color/f_purple"
-        android:text="@string/add_new_book_btn"
+        android:text="@string/home_btn"
         android:textSize="16sp"
-        app:icon="@drawable/add_icon_foreground"
+        app:icon="@drawable/rtn_home_icon_foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_list_lst" />
+        app:layout_constraintTop_toBottomOf="@+id/book_stat_list_lst" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

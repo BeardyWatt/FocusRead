@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/fr_logo2" />
 
     <TextView
-        android:id="@+id/setupTitle"
+        android:id="@+id/setup_title"
         android:layout_width="270dp"
         android:layout_height="55dp"
         android:layout_marginTop="12dp"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo_2" />
 
     <FrameLayout
-        android:id="@+id/readInProgressLayout"
+        android:id="@+id/read_in_progress_layout"
         android:layout_width="296dp"
         android:layout_height="165dp"
         android:layout_marginTop="16dp"
@@ -43,46 +43,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setupTitle">
+        app:layout_constraintTop_toBottomOf="@+id/setup_title">
 
     </FrameLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/text_input_layout"
         android:layout_width="290dp"
         android:layout_height="59dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/readInProgressLayout">
+        app:layout_constraintTop_toBottomOf="@+id/read_in_progress_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/startFromEditText"
+            android:id="@+id/start_from_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Start From" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/targetInputLayout"
+        android:id="@+id/target_input_layout"
         android:layout_width="290dp"
         android:layout_height="64dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/targetEditText"
+            android:id="@+id/target_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Target" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/startReadBtn"
+        android:id="@+id/start_read_btn"
         android:layout_width="298dp"
         android:layout_height="79dp"
         android:layout_marginTop="8dp"
@@ -93,20 +93,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/targetInputLayout" />
+        app:layout_constraintTop_toBottomOf="@id/target_input_layout" />
 
     <Button
         android:id="@+id/view_stats_btn"
         android:layout_width="300dp"
         android:layout_height="71dp"
         android:layout_marginTop="8dp"
-        android:background="@color/fpurple"
+        android:background="@color/f_purple"
         android:text="@string/view_stats_btn"
         android:textSize="16sp"
         app:icon="@drawable/stat_icon_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startReadBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/start_read_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
