@@ -40,6 +40,7 @@
             android:layout_height="wrap_content"
             android:hint="Book Title"
             android:inputType="text"
+            android:textColor="@color/black"
             android:textColorHint="@color/f_grey" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,7 +65,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Book Author"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -89,6 +91,7 @@
             android:layout_height="wrap_content"
             android:hint="Number of Pages"
             android:inputType="number"
+            android:textColor="@color/black"
             android:textColorHint="#757575"
             tools:ignore="TextContrastCheck,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -118,6 +121,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/number_of_chapters"
             android:inputType="number"
+            android:textColor="@color/black"
             android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
