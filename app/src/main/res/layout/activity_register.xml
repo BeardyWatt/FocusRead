@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/f_blue"
     tools:context=".RegisterActivity">
 
     <TextView
@@ -19,51 +20,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/name_linear_layout"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:orientation="horizontal"
+        app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/create_account_title">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/first_name_input_layout"
-            android:layout_width="0dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_input_edit"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="24dp"
-            android:layout_weight="1"
-            android:background="@color/white"
-            app:boxBackgroundColor="@color/white">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/first_name_input_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="First Name"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/surname_input_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:boxBackgroundColor="@color/white">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/surname_input_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Surname"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+            android:hint="Username"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emails_input_layout"
@@ -75,7 +50,7 @@
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_linear_layout">
+        app:layout_constraintTop_toBottomOf="@id/username_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emails_input_edit"

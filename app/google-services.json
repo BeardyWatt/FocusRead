@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "892984705033",
+    "project_id": "focus-read-db705",
+    "storage_bucket": "focus-read-db705.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892984705033:android:d2689c4668fe02d09ef8d8",
+        "android_client_info": {
+          "package_name": "com.hfad.focusread"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892984705033-1cd2r6jjojmrp4t1baqp4r59bq65tpi3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hfad.focusread",
+            "certificate_hash": "ae9d6f829def33774ee317ce640b072396a06abf"
+          }
+        },
+        {
+          "client_id": "892984705033-b7bhdvfk9r5mscajpa0dhuvsed5812bv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArAzAonYk7KuZFK_1yFe8N4H3qvxS11rA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892984705033-b7bhdvfk9r5mscajpa0dhuvsed5812bv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,6 +8,7 @@
     <string name="privacy">Privacy</string>
     <string name="forgot_password">Forgot Password?</string>
 
+
     <!-- Strings for home_screen_activity-->
     <string name="book_list_btn">View Book List</string>
     <string name="add_new_book_btn">Add New Book</string>

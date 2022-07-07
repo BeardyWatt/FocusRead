@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:hint="Book Title"
             android:inputType="text"
-            android:textColorHint="@color/fgrey" />
+            android:textColorHint="@color/f_grey" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
