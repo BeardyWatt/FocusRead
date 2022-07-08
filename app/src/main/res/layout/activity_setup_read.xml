@@ -11,7 +11,9 @@
         android:id="@+id/logo_2"
         android:layout_width="156dp"
         android:layout_height="93dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
         android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -23,10 +25,12 @@
         android:id="@+id/setup_title"
         android:layout_width="270dp"
         android:layout_height="55dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/setup_title"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="#5D4037"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +55,7 @@
         android:id="@+id/text_input_layout"
         android:layout_width="290dp"
         android:layout_height="59dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,14 +65,16 @@
             android:id="@+id/start_from_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Start From" />
+            android:hint="@string/start_from"
+            android:textColorHint="#01579B"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/target_input_layout"
         android:layout_width="290dp"
         android:layout_height="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +84,9 @@
             android:id="@+id/target_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Target" />
+            android:hint="@string/set_target"
+            android:textColorHint="#01579B"
+            tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

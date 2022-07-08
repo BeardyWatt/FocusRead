@@ -9,11 +9,14 @@
 
     <TextView
         android:id="@+id/user_agreement_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/user_agreement_title"
-        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -40,9 +43,11 @@
 
     <Button
         android:id="@+id/u_a_back_btn"
-        android:layout_width="169dp"
-        android:layout_height="49dp"
+        android:layout_width="320dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="@string/user_agreement_back_btn"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -11,7 +11,9 @@
         android:id="@+id/logo_2"
         android:layout_width="156dp"
         android:layout_height="93dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,9 +22,11 @@
 
     <TextView
         android:id="@+id/book_list_title"
-        android:layout_width="221dp"
-        android:layout_height="53dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/book_list_title"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -61,7 +65,7 @@
 
     <Button
         android:id="@+id/add_another_book_to_list_btn"
-        android:layout_width="374dp"
+        android:layout_width="367dp"
         android:layout_height="82dp"
         android:layout_marginTop="8dp"
         android:background="@color/f_purple"
