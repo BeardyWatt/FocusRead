@@ -57,8 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             createAccount(name, email, password, cPassword);
 
-                //Intent intent = new Intent(RegisterActivity.this,ConfirmRegDetailsActivity.class);
-                //startActivity(intent);
+
 
             }
         });
@@ -76,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 .set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
-                                        Toast.makeText(RegisterActivity.this,"User Successfully Created",Toast.LENGTH_SHORT);
+                                        //Toast.makeText(RegisterActivity.this,"User Successfully Created",Toast.LENGTH_SHORT);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
@@ -84,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         Toast.makeText(RegisterActivity.this, "Error User Not Created", Toast.LENGTH_SHORT).show();
                                     }
                                 });
-                        sendEmailVerifcation();
+                        sendEmailVerification();
                     }else {
                         Toast.makeText(this, "Create User With Email Failed" + task.getException(), Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "Create User With Email Failed" + task.getException());
@@ -95,13 +94,15 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void sendEmailVerifcation() {
+    private void sendEmailVerification() {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()) {
-                    Toast.makeText(RegisterActivity.this, "Email sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(RegisterActivity.this, "Confirmation has be sent to sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(RegisterActivity.this,ConfirmRegDetailsActivity.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(RegisterActivity.this, "Failed to send verification email.", Toast.LENGTH_SHORT).show();
                 }
@@ -113,22 +114,22 @@ public class RegisterActivity extends AppCompatActivity {
 
         boolean valid = true;
         if (TextUtils.isEmpty(name)){
-            nameInputEditText.setError("Required");
+            nameInputEditText.setError("Username Required");
             valid = false;
         } else
             nameInputEditText.setError(null);
         if (TextUtils.isEmpty(email)){
-            emailInputEditText.setError("Required");
+            emailInputEditText.setError("Email Required");
             valid = false;
         } else
             emailInputEditText.setError(null);
         if (TextUtils.isEmpty(password)){
-            passwordInputEditText.setError("Required");
+            passwordInputEditText.setError("Strong Password Required");
             valid = false;
         } else
             passwordInputEditText.setError(null);
         if (TextUtils.isEmpty(cPassword)){
-            cPasswordInputEditText.setError("Required");
+            cPasswordInputEditText.setError("Password Confirmation Required");
             valid = false;
         } else
             cPasswordInputEditText.setError(null);
