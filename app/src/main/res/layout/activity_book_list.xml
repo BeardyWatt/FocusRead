@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo_2"
         tools:ignore="Text_contrast_check" />
 
-    <ScrollView
+    <RelativeLayout
         android:id="@+id/book_list_lst"
         android:layout_width="374dp"
         android:layout_height="413dp"
@@ -51,20 +51,20 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/book_recyclerview"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginStart="1dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </ScrollView>
+    </RelativeLayout>
 
     <Button
-        android:id="@+id/add_another_book_to_list_btn"
+        android:id="@+id/add_book_btn"
         android:layout_width="367dp"
         android:layout_height="82dp"
         android:layout_marginTop="8dp"

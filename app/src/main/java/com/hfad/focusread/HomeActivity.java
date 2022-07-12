@@ -36,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
            }
         });
 
-        Button addNewBookBtn = findViewById(R.id.add_another_book_to_list_btn);
+        Button addNewBookBtn = findViewById(R.id.add_book_btn);
         addNewBookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

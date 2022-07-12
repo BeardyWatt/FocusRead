@@ -32,7 +32,7 @@ public class BookAddSuccessActivity extends AppCompatActivity {
             }
         });
 
-        Button addAnotherBookBtn = findViewById(R.id.add_another_book_to_list_btn);
+        Button addAnotherBookBtn = findViewById(R.id.add_book_btn);
         addAnotherBookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

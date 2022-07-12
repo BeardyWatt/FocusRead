@@ -14,12 +14,30 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:contentDescription="@string/todo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fr_logo2" />
+
+    <TextView
+        android:id="@+id/add_book_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/add_book_header"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_2">
+
+    </TextView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/book_title_input_layout"
@@ -29,21 +47,21 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@color/white"
-        android:textColorHint="@color/f_purple"
+        android:textColorHint="@color/f_grey"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo_2">
+        app:layout_constraintTop_toBottomOf="@id/add_book_header">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/book_title_input"
+            android:id="@+id/book_title_input_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Book Title"
+            android:hint="@string/book_title"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textColorHint="@color/f_grey" />
+            android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -54,7 +72,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@color/white"
-        android:textColorHint="@color/f_purple"
+        android:textColorHint="@color/f_grey"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -66,9 +84,10 @@
             android:id="@+id/book_author_input_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Book Author"
+            android:hint="@string/book_author"
             android:inputType="text"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -79,7 +98,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@color/white"
-        android:textColorHint="#9C27B0"
+        android:textColorHint="@color/f_grey"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -91,44 +110,15 @@
             android:id="@+id/nop_input_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Number of Pages"
+            android:hint="@string/number_of_pages"
             android:inputType="number"
             android:textColor="@color/black"
             android:textColorHint="#757575"
             tools:ignore="TextContrastCheck,TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/noc_input_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/white"
-        android:textColorHint="@color/f_purple"
-        app:boxBackgroundColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nop_input_layout"
-        app:placeholderTextColor="@color/black"
-        app:prefixTextColor="@color/black"
-        app:suffixTextColor="@color/black">
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/noc_input_edit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/number_of_chapters"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <Button
-        android:id="@+id/add_another_book_to_list_btn"
+        android:id="@+id/add_book_btn"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
@@ -140,7 +130,7 @@
         app:icon="@drawable/add_icon_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noc_input_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/nop_input_layout" />
 
     <Button
         android:id="@+id/return_home_btn"
@@ -156,6 +146,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_another_book_to_list_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/add_book_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

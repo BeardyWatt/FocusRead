@@ -19,11 +19,11 @@
     <string name="logout_btn">Logout</string>
 
     <!--Strings for add_book_activity -->
+    <string name="add_book_header">Add Book to List</string>
     <string name="book_title_input">Book Title</string>
     <string name="book_author_input">Book Author</string>
     <string name="nop_input">No. of Pages</string>
     <string name="noc_input">No. of Chapters</string>
-    <string name="todo">TODO</string>
     <string name="number_of_chapters">Number of Chapters</string>
     <string name="add_book_btn">Add Book To List</string>
     <string name="home_btn">Return to Home Screen</string>
@@ -52,6 +52,7 @@
     <string name="confirm_reg_detail_bio2">Please click on the link to confirm your details and finish registering. You may need to check your spam folder.</string>
     <string name="no_email_text">Cant find the email?</string>
     <string name="resend_btn">Resend Email</string>
+    <string name="go_to_login">Go to Login</string>
 
     <!--Strings for congrats_activity -->
     <string name="congrats_title">Congratulations!</string>
@@ -63,6 +64,9 @@
     <string name="place_holder_tv">Place Holder</string>
     <string name="start_read_btn">Start Read</string>
     <string name="add_another_book_btn">Add Another Book</string>
+    <string name="book_title">Book Title</string>
+    <string name="book_author">Book Author</string>
+    <string name="number_of_pages">Number of Pages</string>
 
     <!--Strings for book_list_activity -->
     <string name="book_list_title">Book List</string>
@@ -96,5 +100,7 @@
     <string name="set_reminder_info">Set a reminder by simply selecting the day then the time you want to schedule your next read reminder below</string>
     <string name="start_from">Start From</string>
     <string name="set_target">Set Target</string>
+
+
 
 </resources>
