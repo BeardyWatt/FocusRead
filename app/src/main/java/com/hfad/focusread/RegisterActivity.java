@@ -75,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 .set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
+                                    sendEmailVerification();
                                         //Toast.makeText(RegisterActivity.this,"User Successfully Created",Toast.LENGTH_SHORT);
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
@@ -83,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         Toast.makeText(RegisterActivity.this, "Error User Not Created", Toast.LENGTH_SHORT).show();
                                     }
                                 });
-                        sendEmailVerification();
+
                     }else {
                         Toast.makeText(this, "Create User With Email Failed" + task.getException(), Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "Create User With Email Failed" + task.getException());
@@ -102,6 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if(task.isSuccessful()) {
                     //Toast.makeText(RegisterActivity.this, "Confirmation has be sent to sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegisterActivity.this,ConfirmRegDetailsActivity.class);
+                    intent.putExtra("EMAIL", user.getEmail());
                     startActivity(intent);
                 }else{
                     Toast.makeText(RegisterActivity.this, "Failed to send verification email.", Toast.LENGTH_SHORT).show();

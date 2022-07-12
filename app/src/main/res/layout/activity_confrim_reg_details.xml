@@ -86,39 +86,11 @@
         app:layout_constraintTop_toBottomOf="@+id/user_reg_email" />
 
     <Button
-        android:id="@+id/no_email_btn"
-        android:layout_width="178dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/resend_btn"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/no_email_tv" />
-
-    <TextView
-        android:id="@+id/no_email_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/no_email_text"
-        android:textAlignment="center"
-        android:textColor="#3E2723"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_con_btn" />
-
-    <Button
-        android:id="@+id/email_con_btn"
+        android:id="@+id/go_to_login"
         android:layout_width="185dp"
         android:layout_height="65dp"
         android:layout_marginTop="24dp"
-        android:text="Email Confirmed"
+        android:text="Go to Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

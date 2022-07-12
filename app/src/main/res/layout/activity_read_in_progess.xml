@@ -21,24 +21,44 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fr_logo2" />
 
-    <FrameLayout
-        android:id="@+id/read_in_progress_layout"
-        android:layout_width="392dp"
-        android:layout_height="283dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/white"
+    <TextView
+        android:id="@+id/read_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/f_green"
+        android:text="@string/read_title"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_2">
+        app:layout_constraintTop_toBottomOf="@+id/logo_2" />
 
-    </FrameLayout>
+    <TextView
+        android:id="@+id/time_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/f_green"
+        android:textColor="@color/white"
+        android:textSize="78sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/read_title" />
 
     <Button
         android:id="@+id/pause_btn"
         android:layout_width="266dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="@string/pause_btn"
         app:icon="@drawable/pause_read_icon_foreground"
@@ -46,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/read_in_progress_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/time_view" />
 
     <Button
         android:id="@+id/continue_btn"
