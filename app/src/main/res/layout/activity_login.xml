@@ -15,10 +15,11 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:text="@string/welcome"
+        android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo_2" />
 
@@ -95,9 +96,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/forgot_password"
         android:clickable="true"
         android:focusable="true"
+        android:text="@string/forgot_password"
         android:textColor="@color/f_purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_input_layout" />

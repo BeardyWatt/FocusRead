@@ -19,11 +19,13 @@ public class LoginActivity extends BaseActivity {
     private TextInputEditText emailEditText;
     private TextInputEditText passwordEditText;
 
+    Button loginBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        loginBtn = findViewById(R.id.login_btn);
 
         firebaseAuth = FirebaseAuth.getInstance();
         authStateListener = firebaseAuth -> {
@@ -38,7 +40,6 @@ public class LoginActivity extends BaseActivity {
             }
         };
 
-        Button loginBtn = findViewById(R.id.login_btn);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +52,7 @@ public class LoginActivity extends BaseActivity {
     private void manageLogin() {
         emailEditText = findViewById(R.id.email_input_edit);
         passwordEditText = findViewById(R.id.password_input_edit);
-        Button loginBtn = findViewById(R.id.login_btn);
+        loginBtn = findViewById(R.id.login_btn);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

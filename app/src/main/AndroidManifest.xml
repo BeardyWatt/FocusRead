@@ -44,9 +44,6 @@
             android:name=".BookAddSuccessActivity"
             android:exported="false" />
         <activity
-            android:name=".CongratsMainActivity"
-            android:exported="false" />
-        <activity
             android:name=".ConfirmRegDetailsActivity"
             android:exported="false" />
         <activity

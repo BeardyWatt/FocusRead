@@ -9,19 +9,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class ConfirmRegDetailsActivity extends AppCompatActivity {
-
+    Button goToLogin;
     private static final String TAG = "ConfirmActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confrim_reg_details);
+        goToLogin = findViewById(R.id.go_to_login);
+
         Intent intent = getIntent();
         String email = intent.getStringExtra("EMAIL");
         TextView emailText = findViewById(R.id.user_reg_email);
         emailText.setText(email);
-
-        Button goToLogin = findViewById(R.id.go_to_login);
 
         goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override

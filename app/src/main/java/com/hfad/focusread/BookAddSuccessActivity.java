@@ -8,13 +8,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class BookAddSuccessActivity extends AppCompatActivity {
-
+    Button startReadBtn ,viewBookListBtn, addAnotherBookBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_add_success);
+        startReadBtn = findViewById(R.id.start_read_btn);
+        viewBookListBtn = findViewById(R.id.view_book_list_btn);
+        addAnotherBookBtn = findViewById(R.id.add_book_btn);
 
-        Button startReadBtn = findViewById(R.id.start_read_btn);
         startReadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,7 +25,6 @@ public class BookAddSuccessActivity extends AppCompatActivity {
             }
         });
 
-        Button viewBookListBtn = findViewById(R.id.view_book_list_btn);
         viewBookListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,7 +33,7 @@ public class BookAddSuccessActivity extends AppCompatActivity {
             }
         });
 
-        Button addAnotherBookBtn = findViewById(R.id.add_book_btn);
+
         addAnotherBookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -10,24 +10,19 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
+    Button logoutBtn, viewBookListBtn, addNewBookBtn, readReminderBtn, viewStatsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button logoutBtn = findViewById(R.id.logout_btn);
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+        viewBookListBtn = findViewById(R.id.view_book_list_btn);
+        addNewBookBtn = findViewById(R.id.add_book_btn);
+        readReminderBtn = findViewById(R.id.set_read_reminder_btn);
+        viewStatsBtn = findViewById(R.id.view_stats_btn);
+        logoutBtn = findViewById(R.id.logout_btn);
 
-
-        Button viewBookListBtn = findViewById(R.id.view_book_list_btn);
         viewBookListBtn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -36,7 +31,6 @@ public class HomeActivity extends AppCompatActivity {
            }
         });
 
-        Button addNewBookBtn = findViewById(R.id.add_book_btn);
         addNewBookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +39,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        Button readReminderBtn = findViewById(R.id.set_read_reminder_btn);
         readReminderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,11 +47,19 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        Button viewStatsBtn = findViewById(R.id.view_stats_btn);
         viewStatsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this,StatsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
                 startActivity(intent);
             }
         });
