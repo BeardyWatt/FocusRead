@@ -1,4 +1,5 @@
 package com.hfad.focusread;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,45 +9,47 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    Context context;
-    ArrayList<Book> list;
 
-    public MyAdapter(Context context, ArrayList<Book> list) {
-        this.context = context;
-        this.list = list;
+    Context context;
+    ArrayList<Book> books;
+
+    public MyAdapter(Context c, ArrayList<Book> b) {
+
+        context = c;
+        books = b;
     }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.book_object,parent, false);
-        return new MyViewHolder(v);
+        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.book_object, parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Book book = list.get(position);
-        holder.bookTitle.setText(book.getBookTitle());
-        holder.author.setText(book.getAuthorName());
-        holder.numberOfPages.setText(book.getNumberOfPages());
+        holder.bookTitle.setText(books.get(position).getBookTitle());
+        holder.bookAuthor.setText(books.get(position).getBookAuthor());
+        holder.numberOfPages.setText(books.get(position).getNumberOfPages());
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return books.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView bookTitle, author, numberOfPages;
+    class MyViewHolder extends RecyclerView.ViewHolder{
+
+        TextView bookTitle, bookAuthor, numberOfPages;
         public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            bookTitle = itemView.findViewById(R.id.textBookTitle);
-            author = itemView.findViewById(R.id.textAuthor);
-            numberOfPages = itemView.findViewById(R.id.textNop);
-        }
-    }
+           super(itemView);
+        bookTitle = (TextView) itemView.findViewById(R.id.textBookTitle);
+        bookAuthor = (TextView) itemView.findViewById(R.id.textAuthor);
+        numberOfPages = (TextView) itemView.findViewById(R.id.textNop);
+       }
+   }
 }
-

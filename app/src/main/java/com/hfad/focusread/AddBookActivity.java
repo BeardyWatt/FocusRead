@@ -41,8 +41,8 @@ public class AddBookActivity extends AppCompatActivity {
             }
         });
 
-        Button returnHomeBtn = findViewById(R.id.return_home_btn);
-        returnHomeBtn.setOnClickListener(new View.OnClickListener() {
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AddBookActivity.this,HomeActivity.class);
@@ -65,7 +65,7 @@ public class AddBookActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful())
                         {
-                            Toast.makeText(AddBookActivity.this, "book Details Inserted", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddBookActivity.this, "Book Details Added", Toast.LENGTH_SHORT).show();
                         }
 
                     }

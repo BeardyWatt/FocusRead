@@ -26,7 +26,7 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         loginBtn = findViewById(R.id.login_btn);
-
+        String emailAddress = "user@example.com";
         firebaseAuth = FirebaseAuth.getInstance();
         authStateListener = firebaseAuth -> {
             FirebaseUser currentUser = firebaseAuth.getCurrentUser();
@@ -67,6 +67,15 @@ public class LoginActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.forgot_txt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,ForgotPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void emailPasswordLogin(String email, String password) {
@@ -98,7 +107,7 @@ public class LoginActivity extends BaseActivity {
         } else
             emailEditText.setError(null);
         if (TextUtils.isEmpty(password)){
-            passwordEditText.setError("Strong Password Required");
+            passwordEditText.setError("Password Required");
             valid = false;
         } else
             passwordEditText.setError(null);

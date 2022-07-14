@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class BookAddSuccessActivity extends AppCompatActivity {
     Button startReadBtn ,viewBookListBtn, addAnotherBookBtn;
@@ -16,6 +17,7 @@ public class BookAddSuccessActivity extends AppCompatActivity {
         startReadBtn = findViewById(R.id.start_read_btn);
         viewBookListBtn = findViewById(R.id.view_book_list_btn);
         addAnotherBookBtn = findViewById(R.id.add_book_btn);
+
 
         startReadBtn.setOnClickListener(new View.OnClickListener() {
             @Override

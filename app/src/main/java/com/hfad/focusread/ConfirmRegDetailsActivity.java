@@ -16,7 +16,7 @@ public class ConfirmRegDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confrim_reg_details);
-        goToLogin = findViewById(R.id.go_to_login);
+        goToLogin = findViewById(R.id.go_to_login_btn);
 
         Intent intent = getIntent();
         String email = intent.getStringExtra("EMAIL");

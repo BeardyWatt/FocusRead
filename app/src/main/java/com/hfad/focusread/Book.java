@@ -5,7 +5,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 public class Book {
     private  String bookTitle;
-    private  String authorName;
+    private  String bookAuthor;
     private  String numberOfPages;
 
     public Book() {
@@ -13,7 +13,7 @@ public class Book {
 
     public Book(String bookTitle, String authorName, String numberOfPages) {
         this.bookTitle = bookTitle;
-        this.authorName = authorName;
+        this.bookAuthor = authorName;
         this.numberOfPages = numberOfPages;
     }
 
@@ -21,8 +21,8 @@ public class Book {
         return bookTitle;
     }
 
-    public String getAuthorName() {
-        return authorName;
+    public String getBookAuthor() {
+        return bookAuthor;
     }
 
     public String getNumberOfPages() {

@@ -8,7 +8,12 @@
     <string name="privacy">Privacy</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="not_member">Not a member yet?</string>
-    
+
+    <!--Strings for forgot_password_activity -->
+    <string name="forgot_password_title">FORGOT PASSWORD?</string>
+    <string name="forgot_password_bio">please enter your email address. check your inbox to reset your password</string>
+    <string name="send_btn">SEND RESET</string>
+    <string name="forgot_hint">user@email.com</string>
 
 
     <!-- Strings for home_screen_activity-->
@@ -100,7 +105,6 @@
     <string name="set_reminder_info">Set a reminder by simply selecting the day then the time you want to schedule your next read reminder below</string>
     <string name="start_from">Start From</string>
     <string name="set_target">Set Target</string>
-
 
 
 </resources>
