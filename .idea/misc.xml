@@ -9,7 +9,7 @@
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_add_book.xml" value="0.2" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_book_add_success.xml" value="0.2" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_book_detail_stats.xml" value="0.1609375" />
-        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_book_list.xml" value="0.264" />
+        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_book_list.xml" value="0.2" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_confrim_reg_details.xml" value="0.176" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_congrats_main.xml" value="0.176" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_forgot_password.xml" value="0.264" />
@@ -27,7 +27,9 @@
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_stats.xml" value="0.175" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_user_agreement.xml" value="0.176" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/book_list_itiem.xml" value="0.1" />
-        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/book_object.xml" value="0.25" />
+        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/book_object.xml" value="0.1" />
+        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/forgot_password_dialog.xml" value="0.14177215189873418" />
+        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/stat_card.xml" value="0.17222222222222222" />
       </map>
     </option>
   </component>

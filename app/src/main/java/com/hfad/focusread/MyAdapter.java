@@ -9,8 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
@@ -49,7 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
            super(itemView);
         bookTitle = (TextView) itemView.findViewById(R.id.textBookTitle);
         bookAuthor = (TextView) itemView.findViewById(R.id.textAuthor);
-        numberOfPages = (TextView) itemView.findViewById(R.id.textNop);
+        numberOfPages = (TextView) itemView.findViewById(R.id.no_pages_txt);
        }
    }
 }

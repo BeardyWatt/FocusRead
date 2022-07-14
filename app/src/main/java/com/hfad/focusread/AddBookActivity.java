@@ -12,14 +12,17 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-public class AddBookActivity extends AppCompatActivity {
+public class AddBookActivity extends BaseActivity {
     Button btnAddBook, btnHome;
     EditText bookTitle, authorName, numberOfPages;
     DatabaseReference databaseUsers;
-
+    private FirebaseFirestore firebaseFirestore;
+    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +33,8 @@ public class AddBookActivity extends AppCompatActivity {
         authorName = findViewById(R.id.book_author_input_edit);
         numberOfPages = findViewById(R.id.nop_input_edit);
         databaseUsers = FirebaseDatabase.getInstance().getReference();
-
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
         btnAddBook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,16 +63,32 @@ public class AddBookActivity extends AppCompatActivity {
         String id = databaseUsers.push().getKey();
 
         Book book = new Book(bookBookTitle, bookAuthorName, bookNumberOfPages);
-        databaseUsers.child("Book").child(id).setValue(book)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful())
-                        {
-                            Toast.makeText(AddBookActivity.this, "Book Details Added", Toast.LENGTH_SHORT).show();
-                        }
+        showProgressDialog("please wait while we add your book");
+        firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser().getUid())
+                    .collection("books").add(book).addOnSuccessListener(aVoid -> {
+                        hideProgressDialog();
+                        Bundle extras = new Bundle();
+                        extras.putString("TITLE", bookBookTitle);
+                        extras.putString("NAME", bookAuthorName);
+                        extras.putString("PAGE", bookNumberOfPages);
+                        Intent intent = new Intent(AddBookActivity.this,BookAddSuccessActivity.class);
+                        intent.putExtras(extras);
+                        startActivity(intent);
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(this, "Book was unsuccessfully added to the list", Toast.LENGTH_SHORT).show();
+                        hideProgressDialog();
+                    });
+                    /*databaseUsers.child("Book").child(id).setValue(book)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful())
+                                    {
+                                        Toast.makeText(AddBookActivity.this, "Book Details Added", Toast.LENGTH_SHORT).show();
+                                    }
 
-                    }
-                });
+                                }
+                            });*/
     }
 }
