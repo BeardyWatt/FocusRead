@@ -41,7 +41,7 @@
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/add_new_book_btn"
@@ -57,7 +57,7 @@
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/read_reminder_btn"
@@ -69,27 +69,11 @@
         app:layout_constraintTop_toBottomOf="@+id/add_book_btn" />
 
     <Button
-        android:id="@+id/view_stats_btn"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:background="@color/f_purple"
-        android:text="@string/view_stats_btn"
-        android:textSize="16sp"
-        app:icon="@drawable/stat_icon_foreground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/set_read_reminder_btn" />
-
-    <Button
         android:id="@+id/logout_btn"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/logout_btn"
@@ -98,6 +82,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_stats_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/set_read_reminder_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

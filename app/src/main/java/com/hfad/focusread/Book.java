@@ -8,9 +8,6 @@ public class Book {
     private  String bookAuthor;
     private  String numberOfPages;
 
-    public Book() {
-    }
-
     public Book(String bookTitle, String authorName, String numberOfPages) {
         this.bookTitle = bookTitle;
         this.bookAuthor = authorName;

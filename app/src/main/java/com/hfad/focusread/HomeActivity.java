@@ -47,14 +47,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        viewStatsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,StatsActivity.class);
-                startActivity(intent);
-            }
-        });
-
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

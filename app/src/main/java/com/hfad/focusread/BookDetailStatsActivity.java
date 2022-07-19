@@ -20,7 +20,16 @@ public class BookDetailStatsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_book_detail_stats);
 
         returnHomeBtn = findViewById(R.id.return_home_btn);
-        bookStatDetailTxt = findViewById(R.id.book_details_txt);
+        bookStatDetailTxt = findViewById(R.id.book_info_txt);
+
+        Intent intent = getIntent();
+
+        String title = intent.getStringExtra("TITLE");
+        String author = intent.getStringExtra("AUTHOR");
+        String pages = intent.getStringExtra("NOP");
+
+        bookStatDetailTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "  + pages);
+
 
         returnHomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override

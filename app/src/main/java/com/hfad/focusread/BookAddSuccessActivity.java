@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 public class BookAddSuccessActivity extends AppCompatActivity {
     Button startReadBtn ,viewBookListBtn, addAnotherBookBtn;
+    TextView bookInfoTxt;
     private static final String TAG = "BookAddActivity";
 
     @Override
@@ -20,7 +21,7 @@ public class BookAddSuccessActivity extends AppCompatActivity {
         startReadBtn = findViewById(R.id.start_read_btn);
         viewBookListBtn = findViewById(R.id.view_book_list_btn);
         addAnotherBookBtn = findViewById(R.id.add_book_btn);
-        TextView bookInfoTxt = findViewById(R.id.book_info_added);
+        bookInfoTxt = findViewById(R.id.book_info_added);
 
         Intent intent = getIntent();
 

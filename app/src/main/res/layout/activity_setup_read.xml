@@ -29,7 +29,7 @@
         android:layout_marginEnd="16dp"
         android:text="@string/setup_title"
         android:textAlignment="center"
-        android:textColor="#5D4037"
+        android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,18 +37,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo_2" />
 
-    <FrameLayout
-        android:id="@+id/read_in_progress_layout"
-        android:layout_width="296dp"
-        android:layout_height="165dp"
-        android:layout_marginTop="16dp"
+    <TextView
+        android:id="@+id/start_book_info_added"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        android:padding="16dp"
         android:background="@color/white"
+        android:textColor="@color/f_black"
+        android:minHeight="48dp"
+        android:text="book details"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setup_title">
-
-    </FrameLayout>
+        app:layout_constraintTop_toBottomOf="@+id/setup_title" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout"
@@ -58,13 +63,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/read_in_progress_layout">
+        app:layout_constraintTop_toBottomOf="@+id/start_book_info_added">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/start_from_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/start_from"
+            android:inputType="number"
             android:textColorHint="#01579B"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -84,6 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/set_target"
+            android:inputType="number"
             android:textColorHint="#01579B"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
