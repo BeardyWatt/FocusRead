@@ -8,7 +8,7 @@
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_add_book.xml" value="0.2" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_book_add_success.xml" value="0.176" />
-        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_book_detail_stats.xml" value="0.1609375" />
+        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_book_detail_stats.xml" value="0.128" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_book_list.xml" value="0.176" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_confrim_reg_details.xml" value="0.176" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_congrats_main.xml" value="0.176" />
@@ -22,7 +22,7 @@
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_read_logged.xml" value="0.176" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_session_finished.xml" value="0.264" />
-        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_set_reminder.xml" value="0.2" />
+        <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_set_reminder.xml" value="0.176" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_setup_read.xml" value="0.2" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_stats.xml" value="0.175" />
         <entry key="..\:/Users/marto/AndroidStudioProjects/FocusRead/app/src/main/res/layout/activity_user_agreement.xml" value="0.176" />

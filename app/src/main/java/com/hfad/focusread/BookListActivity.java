@@ -1,6 +1,5 @@
 package com.hfad.focusread;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,24 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,7 +24,6 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BookListActivity extends AppCompatActivity {
     Button addNewBookBtn;
@@ -52,12 +41,12 @@ public class BookListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_list);
         addNewBookBtn = findViewById(R.id.add_book_btn);
-        recyclerView = (RecyclerView) findViewById(R.id.book_recyclerview);
+        recyclerView = (RecyclerView) findViewById(R.id.stat_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         bookList = new ArrayList<Book>();
         adapter = new MyAdapter(this,bookList);
         recyclerView.setAdapter(adapter);
-        emptyTxt = findViewById(R.id.empty_view);
+        emptyTxt = findViewById(R.id.stat_empty_view);
         progressBar = findViewById(R.id.progressBar);
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();

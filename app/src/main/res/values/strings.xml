@@ -105,6 +105,8 @@
     <string name="set_reminder_info">Set a reminder by simply selecting the day then the time you want to schedule your next read reminder below</string>
     <string name="start_from">Start From</string>
     <string name="set_target">Set Target</string>
-
+    <string name="select_date_btn">Select Date</string>
+    <string name="select_time_btn">Select Time</string>
+    <string name="set_btn">Set</string>
 
 </resources>

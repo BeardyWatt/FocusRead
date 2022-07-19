@@ -29,7 +29,7 @@
         android:layout_marginEnd="16dp"
         android:text="@string/set_reminder_title"
         android:textAlignment="center"
-        android:textColor="#5D4037"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,11 +46,56 @@
         android:layout_marginEnd="32dp"
         android:text="@string/set_reminder_info"
         android:textAlignment="center"
-        android:textColor="#3E2723"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/set_reminder_title_tv" />
+
+    <Button
+        android:id="@+id/select_date_btn"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/f_purple"
+        android:text="@string/select_date_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/date_icon_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_reminder_info_tv" />
+
+    <Button
+        android:id="@+id/select_time_btn"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/f_purple"
+        android:textAllCaps="false"
+        android:text="@string/select_time_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/time_icon_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_date_btn" />
+
+    <Button
+        android:id="@+id/set_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/set_btn"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_time_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

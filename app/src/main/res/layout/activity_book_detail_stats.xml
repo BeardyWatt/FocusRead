@@ -58,7 +58,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/book_recyclerview"
+        android:id="@+id/stat_recyclerview"
         android:layout_width="380dp"
         android:layout_height="263dp"
         android:layout_marginStart="8dp"
@@ -86,10 +86,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_recyclerview" />
+        app:layout_constraintTop_toBottomOf="@+id/stat_recyclerview" />
 
     <TextView
-        android:id="@+id/empty_view"
+        android:id="@+id/stat_empty_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="You don't have any Books yet!"
