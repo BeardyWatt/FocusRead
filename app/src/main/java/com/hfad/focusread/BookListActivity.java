@@ -53,7 +53,7 @@ public class BookListActivity extends AppCompatActivity {
 
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-               Book book = queryDocumentSnapshots.toObjects(Book.class)
+            Book book = queryDocumentSnapshots.toObjects(Book.class)
             }
         })
 

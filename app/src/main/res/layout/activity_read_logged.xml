@@ -52,27 +52,27 @@
 
     <Button
         android:id="@+id/set_read_reminder_btn"
-        android:layout_width="310dp"
+        android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/read_reminder_btn"
         android:textSize="16sp"
         app:icon="@drawable/clock_icon_foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/read_logged_place_holder" />
 
     <Button
         android:id="@+id/view_stats_btn"
-        android:layout_width="310dp"
+        android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/view_stats_btn"
         android:textSize="16sp"
@@ -84,17 +84,17 @@
 
     <Button
         android:id="@+id/return_home_btn"
-        android:layout_width="310dp"
+        android:layout_width="0dp"
         android:layout_height="80dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/home_btn"
         android:textSize="16sp"
         app:icon="@drawable/rtn_home_icon_foreground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_stats_btn" />
 

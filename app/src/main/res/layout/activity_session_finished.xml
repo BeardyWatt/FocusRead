@@ -115,7 +115,7 @@
         app:layout_constraintTop_toBottomOf="@+id/end_page_tv">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_page_ended_on"
+            android:id="@+id/ended_on_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="eg.123" />

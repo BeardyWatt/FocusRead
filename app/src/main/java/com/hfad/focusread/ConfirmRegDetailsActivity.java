@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class ConfirmRegDetailsActivity extends AppCompatActivity {
     Button goToLogin;
+    TextView emailText;
     private static final String TAG = "ConfirmActivity";
 
     @Override
@@ -20,7 +21,7 @@ public class ConfirmRegDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String email = intent.getStringExtra("EMAIL");
-        TextView emailText = findViewById(R.id.user_reg_email);
+        emailText = findViewById(R.id.user_reg_email);
         emailText.setText(email);
 
         goToLogin.setOnClickListener(new View.OnClickListener() {
