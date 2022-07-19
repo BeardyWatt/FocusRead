@@ -29,10 +29,10 @@ public class AddBookActivity extends BaseActivity {
         setContentView(R.layout.activity_add_book);
         btnAddBook = findViewById(R.id.add_book_btn);
         btnHome= findViewById(R.id.return_home_btn);
+
         bookTitle = findViewById(R.id.book_title_input_edit);
         authorName = findViewById(R.id.book_author_input_edit);
         numberOfPages = findViewById(R.id.nop_input_edit);
-        databaseUsers = FirebaseDatabase.getInstance().getReference();
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -40,8 +40,6 @@ public class AddBookActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 InsertBookData();
-                Intent intent = new Intent(AddBookActivity.this,BookAddSuccessActivity.class);
-                startActivity(intent);
             }
         });
 
@@ -60,35 +58,21 @@ public class AddBookActivity extends BaseActivity {
         String bookBookTitle = bookTitle.getText().toString();
         String bookAuthorName = authorName.getText().toString();
         String bookNumberOfPages = numberOfPages.getText().toString();
-        String id = databaseUsers.push().getKey();
 
         Book book = new Book(bookBookTitle, bookAuthorName, bookNumberOfPages);
         showProgressDialog("please wait while we add your book");
         firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser().getUid())
                     .collection("books").add(book).addOnSuccessListener(aVoid -> {
                         hideProgressDialog();
-                        Bundle extras = new Bundle();
-                        extras.putString("TITLE", bookBookTitle);
-                        extras.putString("NAME", bookAuthorName);
-                        extras.putString("PAGE", bookNumberOfPages);
                         Intent intent = new Intent(AddBookActivity.this,BookAddSuccessActivity.class);
-                        intent.putExtras(extras);
+                        intent.putExtra("TITLE",bookBookTitle);
+                        intent.putExtra("AUTHOR",bookAuthorName);
+                        intent.putExtra("NOP",bookNumberOfPages);
                         startActivity(intent);
                     })
                     .addOnFailureListener(e -> {
                         Toast.makeText(this, "Book was unsuccessfully added to the list", Toast.LENGTH_SHORT).show();
                         hideProgressDialog();
                     });
-                    /*databaseUsers.child("Book").child(id).setValue(book)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful())
-                                    {
-                                        Toast.makeText(AddBookActivity.this, "Book Details Added", Toast.LENGTH_SHORT).show();
-                                    }
-
-                                }
-                            });*/
     }
 }

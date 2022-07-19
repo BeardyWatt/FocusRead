@@ -22,11 +22,11 @@ public class BookAddSuccessActivity extends AppCompatActivity {
         addAnotherBookBtn = findViewById(R.id.add_book_btn);
         TextView bookInfoTxt = findViewById(R.id.book_info_added);
 
-        Bundle bundle = getIntent().getExtras();
-        String title = bundle.getString("TITLE");
-        String author = bundle.getString("AUTHOR");
-        String pages = bundle.getString("PAGE");
-        Log.d(TAG, "Title = " + title + "Author" + author + "Pages" + pages);
+        Intent intent = getIntent();
+
+        String title = intent.getStringExtra("TITLE");
+        String author = intent.getStringExtra("AUTHOR");
+        String pages = intent.getStringExtra("NOP");
 
         bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "  + pages);
 

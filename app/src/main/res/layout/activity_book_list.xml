@@ -12,22 +12,22 @@
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fr_logo2" />
+        app:srcCompat="@drawable/frlogo" />
 
     <TextView
         android:id="@+id/book_list_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/book_list_title"
+        android:text="Book List"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="34sp"
@@ -38,44 +38,59 @@
         app:layout_constraintTop_toBottomOf="@+id/logo_2"
         tools:ignore="Text_contrast_check" />
 
-    <RelativeLayout
-        android:id="@+id/book_list_lst"
-        android:layout_width="374dp"
-        android:layout_height="413dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/f_green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_list_title">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/book_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/book_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/add_book_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/book_list_title"
+        app:layout_constraintVertical_bias="0.176" />
 
     <Button
         android:id="@+id/add_book_btn"
         android:layout_width="367dp"
         android:layout_height="82dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@color/f_purple"
-        android:text="@string/add_new_book_btn"
+        android:text="Add New Book"
         android:textSize="16sp"
-        app:icon="@drawable/add_icon_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You don't have any Books yet!"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_list_lst" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

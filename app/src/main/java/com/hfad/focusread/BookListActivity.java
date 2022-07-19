@@ -1,6 +1,7 @@
 package com.hfad.focusread;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,9 +23,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -31,12 +38,14 @@ import java.util.List;
 
 public class BookListActivity extends AppCompatActivity {
     Button addNewBookBtn;
-    DatabaseReference reference;
     RecyclerView recyclerView;
-    ArrayList<Book> list;
+    ArrayList<Book> bookList;
     MyAdapter adapter;
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
+    TextView emptyTxt;
+    ProgressBar progressBar;
+    ListenerRegistration bookListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,35 +54,13 @@ public class BookListActivity extends AppCompatActivity {
         addNewBookBtn = findViewById(R.id.add_book_btn);
         recyclerView = (RecyclerView) findViewById(R.id.book_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        list = new ArrayList<Book>();
+        bookList = new ArrayList<Book>();
+        adapter = new MyAdapter(this,bookList);
+        recyclerView.setAdapter(adapter);
+        emptyTxt = findViewById(R.id.empty_view);
+        progressBar = findViewById(R.id.progressBar);
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser().getUid()).collection("books").get()
-        .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-            Book book = queryDocumentSnapshots.toObjects(Book.class)
-            }
-        })
-
-        reference = FirebaseDatabase.getInstance().getReference().child("Books");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot snapshot1: snapshot.getChildren()){
-                   Book b = snapshot1.getValue(Book.class);
-                   list.add(b);
-                }
-                adapter = new MyAdapter(BookListActivity.this,list);
-                recyclerView.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(BookListActivity.this, "Something is Wrong", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         addNewBookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,5 +69,38 @@ public class BookListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        bookList.clear();
+        final CollectionReference collection = firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser().getUid()).collection("books");
+        bookListener = collection.addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if(error != null) {
+                    Toast.makeText(BookListActivity.this, "Loading Data Failed ", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(value.isEmpty()){
+                    progressBar.setVisibility(View.GONE);
+                    emptyTxt.setVisibility(View.VISIBLE);
+                }
+                for(DocumentChange dc:value.getDocumentChanges()){
+                    DocumentSnapshot documentSnapshot = dc.getDocument();
+                    Book book = documentSnapshot.toObject(Book.class);
+                    bookList.add(book);
+                    adapter.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
+                }
+            }
+
+        });
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        bookListener.remove();
     }
 }
