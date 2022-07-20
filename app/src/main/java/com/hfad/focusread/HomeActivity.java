@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         readReminderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,SetReminderActivity.class);
+                Intent intent = new Intent(HomeActivity.this,SetReadReminderActivity.class);
                 startActivity(intent);
             }
         });

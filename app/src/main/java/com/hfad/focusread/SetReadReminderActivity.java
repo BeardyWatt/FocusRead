@@ -13,14 +13,14 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-/*public class SetReminderActivity extends AppCompatActivity implements View.OnClickListener {
+public class SetReadReminderActivity extends AppCompatActivity implements View.OnClickListener {
     Button dateBtn, timeBtn, setBtn;
     String timeToNotify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_reminder);
+        setContentView(R.layout.activity_set_read_reminder);
         dateBtn = findViewById(R.id.select_date_btn);
         timeBtn = findViewById(R.id.select_time_btn);
         setBtn = findViewById(R.id.set_btn);
@@ -43,11 +43,10 @@ import java.util.Calendar;
     }
 
     private void submit(){
-        if(timeBtn.getText().toString().equals("Select Time")||(dateBtn.getText().toString().equals("Select Date")){
+        if(timeBtn.getText().toString().equals("Select Time")||(dateBtn.getText().toString().equals("Select Date"))){
             Toast.makeText(this, "Please Select Date and Time", Toast.LENGTH_SHORT).show();
-        } else {
-
         }
+
     }
 
     private  void selectTime(){
@@ -75,6 +74,7 @@ import java.util.Calendar;
 
             }
         },year, month, day);
+        datePickerDialog.show();
     }
 
     public String formatTime(int hour, int minute) {
@@ -101,4 +101,4 @@ import java.util.Calendar;
         }
         return time;
     }
-}*/
+}

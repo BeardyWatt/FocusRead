@@ -24,7 +24,7 @@ public class ReadLoggedActivity extends AppCompatActivity {
         setReminderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReadLoggedActivity.this,SetReminderActivity.class);
+                Intent intent = new Intent(ReadLoggedActivity.this,SetReadReminderActivity.class);
                 startActivity(intent);
             }
         });

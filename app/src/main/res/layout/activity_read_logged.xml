@@ -12,7 +12,7 @@
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo_2"
         tools:ignore="Text_contrast_check" />
 
-    <Button
+    <TextView
         android:id="@+id/read_logged_place_holder"
         android:layout_width="310dp"
         android:layout_height="150dp"
@@ -45,6 +45,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginEnd="16dp"
         android:text="@string/place_holder_tv"
+        android:background="@color/f_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +56,7 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/read_reminder_btn"
@@ -71,7 +72,7 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/view_stats_btn"
@@ -87,7 +88,7 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/home_btn"

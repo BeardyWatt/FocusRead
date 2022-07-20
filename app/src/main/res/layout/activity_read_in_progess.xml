@@ -12,6 +12,7 @@
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginStart="16dp"
+        android:visibility="visible"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,16 +40,18 @@
         app:layout_constraintTop_toBottomOf="@+id/logo_2" />
 
     <TextView
-        android:id="@+id/time_view"
+        android:id="@+id/timer_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/f_green"
-        android:textColor="@color/white"
-        android:textSize="78sp"
+        android:hint="00:00:00"
+        android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="56sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/read_title" />
 
@@ -60,12 +63,13 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="@string/pause_btn"
+        android:onClick="onClickPause"
         app:icon="@drawable/pause_read_icon_foreground"
         app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time_view" />
+        app:layout_constraintTop_toBottomOf="@+id/timer_tv" />
 
     <Button
         android:id="@+id/continue_btn"
@@ -75,6 +79,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="@string/continue_btn"
+        android:onClick="onClickResume"
         app:icon="@drawable/start_read_icon_foreground"
         app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,6 +95,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="@string/end_btn"
+        android:onClick="onClickStop"
         app:icon="@drawable/stop_read_icon_foreground"
         app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
