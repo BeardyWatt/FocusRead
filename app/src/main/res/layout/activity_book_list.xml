@@ -43,7 +43,7 @@
         android:id="@+id/stat_recyclerview"
         android:layout_width="match_parent"
         android:backgroundTint="@color/f_blue"
-        android:layout_height="370dp"
+        android:layout_height="420dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
@@ -58,8 +58,8 @@
 
     <Button
         android:id="@+id/add_book_btn"
-        android:layout_width="367dp"
-        android:layout_height="82dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"

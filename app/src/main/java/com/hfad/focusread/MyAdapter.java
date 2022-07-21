@@ -26,7 +26,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @NonNull
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.book_object, parent,false));
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.book_card, parent,false));
     }
 
     @Override
@@ -42,18 +42,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView bookTitle, bookAuthor, numberOfPages;
+        TextView bookTitle, bookAuthor, numberOfPages, status;
         public ViewHolder(@NonNull View itemView) {
            super(itemView);
             bookTitle = (TextView) itemView.findViewById(R.id.textBookTitle);
             bookAuthor = (TextView) itemView.findViewById(R.id.textAuthor);
             numberOfPages = (TextView) itemView.findViewById(R.id.no_pages_txt);
+            status = itemView.findViewById(R.id.status);
             itemView.setOnClickListener(this);
        }
        void bindTo(Book currentBook){
             bookTitle.setText(currentBook.getBookTitle());
             bookAuthor.setText(currentBook.getBookAuthor());
             numberOfPages.setText(currentBook.getNumberOfPages());
+            status.setText(currentBook.getStatus());
        }
        public void onClick(View v){
             Book currentBook = bookList.get(getAdapterPosition());
@@ -61,6 +63,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             intent.putExtra("TITLE", currentBook.getBookTitle());
             intent.putExtra("AUTHOR", currentBook.getBookAuthor());
             intent.putExtra("NOP", currentBook.getNumberOfPages());
+            intent.putExtra("STATUS", currentBook.getStatus());
+            intent.putExtra("STARTPAGE", currentBook.getStartPage());
             context.startActivity(intent);
        }
    }

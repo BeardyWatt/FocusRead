@@ -6,27 +6,44 @@ import com.google.firebase.database.IgnoreExtraProperties;
 public class Book {
     private  String bookTitle;
     private  String bookAuthor;
-    private  String numberOfPages;
+    private  int numberOfPages;
+    private int startPage;
+    private String status;
 
-    public Book(String bookTitle, String authorName, String numberOfPages) {
+
+
+    public Book(String bookTitle, String authorName, int numberOfPages) {
         this.bookTitle = bookTitle;
         this.bookAuthor = authorName;
         this.numberOfPages = numberOfPages;
+        this.startPage = 1;
+        this.status = "Not Started";
     }
 
     public Book() {
 
     }
 
-    public String getBookTitle() {
+    public String getBookTitle()
+    {
         return bookTitle;
     }
 
-    public String getBookAuthor() {
+    public String getBookAuthor()
+    {
         return bookAuthor;
     }
 
-    public String getNumberOfPages() {
+    public int getNumberOfPages()
+    {
         return numberOfPages;
+    }
+
+    public int getStartPage() {
+        return startPage;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }

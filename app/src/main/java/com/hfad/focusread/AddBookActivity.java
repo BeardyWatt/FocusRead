@@ -57,7 +57,7 @@ public class AddBookActivity extends BaseActivity {
     private void InsertBookData() {
         String bookBookTitle = bookTitle.getText().toString();
         String bookAuthorName = authorName.getText().toString();
-        String bookNumberOfPages = numberOfPages.getText().toString();
+        int bookNumberOfPages = Integer.parseInt(numberOfPages.getText().toString());
 
         Book book = new Book(bookBookTitle, bookAuthorName, bookNumberOfPages);
         showProgressDialog("please wait while we add your book");

@@ -31,16 +31,30 @@ public class SetupReadActivity extends AppCompatActivity {
 
         String title = intent.getStringExtra("TITLE");
         String author = intent.getStringExtra("AUTHOR");
-        String pages = intent.getStringExtra("NOP");
+        int pages = intent.getIntExtra("NOP", 1);
+        String status = intent.getStringExtra("STATUS");
+        int startPage = intent.getIntExtra("STARTPAGE", 1);
 
-        bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "  + pages);
 
+        bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "  + pages + "\n" + "Status " + status );
+        startFromET.setText(startPage);
 
 
         startReadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int newStartPage = Integer.parseInt(startFromET.getText().toString());
+                int target = Integer.parseInt(targetET.getText().toString());
+
                 Intent intent = new Intent(SetupReadActivity.this,ReadInProgressActivity.class);
+
+                intent.putExtra("TITLE", title);
+                intent.putExtra("AUTHOR", author);
+                intent.putExtra("NOP", pages);
+                intent.putExtra("STATUS", status);
+                intent.putExtra("STARTPAGE", newStartPage);
+                intent.putExtra("TARGET", target);
+
                 startActivity(intent);
             }
         });

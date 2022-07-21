@@ -3,6 +3,7 @@ package com.hfad.focusread;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,17 +19,27 @@ public class ReadInProgressActivity extends Activity {
     // Number of seconds displayed
     // on the stopwatch.
     private int seconds = 0;
-
     // Is the stopwatch running?
     private boolean running;
-
     private boolean wasRunning;
+
+    private String title, author, status;
+    private  int pages, target, startPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_in_progess);
+        Intent intent = getIntent();
+
+        title = intent.getStringExtra("TITLE");
+        author = intent.getStringExtra("AUTHOR");
+        pages = intent.getIntExtra("NOP", 1);
+        status = intent.getStringExtra("STATUS");
+        target = intent.getIntExtra("TARGET", 1);
+        startPage = intent.getIntExtra("STARTPAGE", 1);
+
         if (savedInstanceState != null) {
             onStart();
 
@@ -127,12 +138,43 @@ public class ReadInProgressActivity extends Activity {
     // when the Stop button is clicked.
     public void onClickStop(View view)
     {
+        showStopDialog();
         running = false;
-        Intent intent = new Intent(ReadInProgressActivity.this,SessionFinishedActivity.class);
-        startActivity(intent);
     }
 
-    // Sets the NUmber of seconds on the timer.
+    private void showStopDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View inflater = getLayoutInflater().inflate(R.layout.end_read_dialog, null);
+        builder.setView(inflater);
+        final AlertDialog stopDialog = builder.create();
+        Button yesBtn = inflater.findViewById(R.id.yes_btn);
+        yesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReadInProgressActivity.this,SessionFinishedActivity.class);
+                intent.putExtra("TITLE", title);
+                intent.putExtra("AUTHOR", author);
+                intent.putExtra("NOP", pages);
+                intent.putExtra("STATUS", status);
+                intent.putExtra("STARTPAGE", startPage);
+                intent.putExtra("TARGET", target);
+                //we need to send the time logged
+
+                startActivity(intent);
+            }
+        });
+
+        Button noBtn = inflater.findViewById(R.id.no_btn);
+        noBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopDialog.dismiss();
+                //continue timer
+            }
+        });
+    }
+
+    // Sets the Number of seconds on the timer.
     // The runTimer() method uses a Handler
     // to increment the seconds and
     // update the text view.

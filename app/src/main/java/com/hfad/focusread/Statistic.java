@@ -1,14 +1,18 @@
 package com.hfad.focusread;
 
+import java.util.Date;
+
 public class Statistic {
     private int startingPage;
     private int target;
     private boolean targetHit;
+    private Date date;
 
-    public Statistic(int startingPage, int target, boolean targetHit) {
+    public Statistic(int startingPage, int target, boolean targetHit, Date date) {
         this.startingPage = startingPage;
         this.target = target;
         this.targetHit = targetHit;
+        this.date = date;
     }
 
     public int getStartingPage() {
@@ -23,15 +27,7 @@ public class Statistic {
         return targetHit;
     }
 
-    public void setStartingPage(int startingPage) {
-        this.startingPage = startingPage;
-    }
-
-    public void setTarget(int target) {
-        this.target = target;
-    }
-
-    public void setTargetHit(boolean targetHit) {
-        this.targetHit = targetHit;
+    public Date getDate() {
+        return date;
     }
 }

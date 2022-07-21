@@ -27,7 +27,7 @@ public class BookAddSuccessActivity extends AppCompatActivity {
 
         String title = intent.getStringExtra("TITLE");
         String author = intent.getStringExtra("AUTHOR");
-        String pages = intent.getStringExtra("NOP");
+        int pages = intent.getIntExtra("NOP", 1);
 
         bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "  + pages);
 
