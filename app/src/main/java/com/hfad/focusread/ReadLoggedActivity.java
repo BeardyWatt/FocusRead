@@ -24,7 +24,8 @@ public class ReadLoggedActivity extends AppCompatActivity {
         setReminderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReadLoggedActivity.this,SetReadReminderActivity.class);
+                Intent intent = new Intent(ReadLoggedActivity.this
+                        ,SetReadReminderActivity.class);
                 startActivity(intent);
             }
         });
@@ -32,7 +33,8 @@ public class ReadLoggedActivity extends AppCompatActivity {
         viewStatsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReadLoggedActivity.this,StatsActivity.class);
+                Intent intent = new Intent(ReadLoggedActivity
+                        .this,StatsActivity.class);
                 startActivity(intent);
             }
         });

@@ -54,7 +54,8 @@ public class BookListActivity extends AppCompatActivity {
         addNewBookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BookListActivity.this,AddBookActivity.class);
+                Intent intent = new Intent(BookListActivity.this
+                        ,AddBookActivity.class);
                 startActivity(intent);
             }
         });
@@ -64,12 +65,15 @@ public class BookListActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         bookList.clear();
-        final CollectionReference collection = firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser().getUid()).collection("books");
+        final CollectionReference collection = firebaseFirestore.collection("users")
+                .document(firebaseAuth.getCurrentUser().getUid()).collection("books");
         bookListener = collection.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+            public void onEvent(@Nullable QuerySnapshot value
+                    , @Nullable FirebaseFirestoreException error) {
                 if(error != null) {
-                    Toast.makeText(BookListActivity.this, "Loading Data Failed ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BookListActivity.this
+                            , "Loading Data Failed ", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(value.isEmpty()){

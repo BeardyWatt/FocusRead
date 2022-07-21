@@ -55,17 +55,20 @@ public class AddBookActivity extends BaseActivity {
 
         Book book = new Book(bookBookTitle, bookAuthorName, bookNumberOfPages);
         showProgressDialog("please wait while we add your book");
-        firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser().getUid())
+        firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser()
+                        .getUid())
                     .collection("books").add(book).addOnSuccessListener(aVoid -> {
                         hideProgressDialog();
-                        Intent intent = new Intent(AddBookActivity.this,BookAddSuccessActivity.class);
+                        Intent intent = new Intent(AddBookActivity.this
+                                ,BookAddSuccessActivity.class);
                         intent.putExtra("TITLE",bookBookTitle);
                         intent.putExtra("AUTHOR",bookAuthorName);
                         intent.putExtra("NOP",bookNumberOfPages);
                         startActivity(intent);
                     })
                     .addOnFailureListener(e -> {
-                        Toast.makeText(this, "Book was unsuccessfully added to the list", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Book was unsuccessfully added to the list"
+                                , Toast.LENGTH_SHORT).show();
                         hideProgressDialog();
                     });
     }

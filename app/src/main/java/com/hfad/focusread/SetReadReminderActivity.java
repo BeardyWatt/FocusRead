@@ -43,8 +43,10 @@ public class SetReadReminderActivity extends AppCompatActivity implements View.O
     }
 
     private void submit(){
-        if(timeBtn.getText().toString().equals("Select Time")||(dateBtn.getText().toString().equals("Select Date"))){
-            Toast.makeText(this, "Please Select Date and Time", Toast.LENGTH_SHORT).show();
+        if(timeBtn.getText().toString().equals("Select Time")||
+                (dateBtn.getText().toString().equals("Select Date"))){
+            Toast.makeText(this, "Please Select Date and Time",
+                    Toast.LENGTH_SHORT).show();
         }
 
     }

@@ -58,13 +58,15 @@ public class BookDetailStatsActivity extends AppCompatActivity {
         String author = intent.getStringExtra("AUTHOR");
         String pages = intent.getStringExtra("NOP");
 
-        bookStatDetailTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "  + pages);
+        bookStatDetailTxt.setText("Book: " + title + "\n" + "Author: " + author +
+                "\n" + "No. of Pages: "  + pages);
 
 
         returnHomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BookDetailStatsActivity.this,HomeActivity.class);
+                Intent intent = new Intent(BookDetailStatsActivity.this
+                        ,HomeActivity.class);
                 startActivity(intent);
             }
         });
@@ -75,12 +77,15 @@ public class BookDetailStatsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         statList.clear();
-        final CollectionReference collection = firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser().getUid()).collection("books");
+        final CollectionReference collection = firebaseFirestore.collection("users")
+                .document(firebaseAuth.getCurrentUser().getUid()).collection("books");
         statListener = collection.addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
-            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+            public void onEvent(@Nullable QuerySnapshot value
+                    , @Nullable FirebaseFirestoreException error) {
                 if(error != null) {
-                    Toast.makeText(BookDetailStatsActivity.this, "Loading Data Failed ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BookDetailStatsActivity.this
+                            , "Loading Data Failed ", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(value.isEmpty()){

@@ -23,7 +23,8 @@ public class SessionFinishedActivity extends AppCompatActivity {
         logTheReadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SessionFinishedActivity.this,ReadLoggedActivity.class);
+                Intent intent = new Intent(SessionFinishedActivity.this,
+                        ReadLoggedActivity.class);
                 startActivity(intent);
             }
         });

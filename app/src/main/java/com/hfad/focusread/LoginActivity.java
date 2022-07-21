@@ -56,7 +56,8 @@ public class LoginActivity extends BaseActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                emailPasswordLogin(emailEditText.getText().toString(), passwordEditText.getText().toString());
+                emailPasswordLogin(emailEditText.getText().toString(), passwordEditText
+                        .getText().toString());
 
             }
         });
@@ -71,7 +72,8 @@ public class LoginActivity extends BaseActivity {
         findViewById(R.id.forgot_txt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,ForgotPasswordActivity.class);
+                Intent intent = new Intent(LoginActivity.this
+                        ,ForgotPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -83,18 +85,22 @@ public class LoginActivity extends BaseActivity {
             return;
         }
         showProgressDialog("Logging in");
-        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this,task -> {
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this,task -> {
             if  (task.isSuccessful()){
                 FirebaseUser currentUser = firebaseAuth.getCurrentUser();
                 if (currentUser != null && currentUser.isEmailVerified()){
                     updateUI();
                 }
                 else{
-                    Toast.makeText(LoginActivity.this, "Email is not verified yet, check your email " + currentUser.getEmail(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this
+                            , "Email is not verified yet, check your email "
+                                    + currentUser.getEmail(), Toast.LENGTH_LONG).show();
                 }
             }
             else{
-                Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Authentication failed"
+                        , Toast.LENGTH_SHORT).show();
             }
             hideProgressDialog();
         });

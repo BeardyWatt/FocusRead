@@ -59,7 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
         findViewById(R.id.t_and_c_txt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this,UserAgreementActivity.class);
+                Intent intent = new Intent(RegisterActivity.this
+                        ,UserAgreementActivity.class);
                 startActivity(intent);
             }
         });
@@ -67,7 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
         findViewById(R.id.privacy_txt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this,PrivacyPolicyActivity.class);
+                Intent intent = new Intent(RegisterActivity
+                        .this,PrivacyPolicyActivity.class);
                 startActivity(intent);
             }
         });
@@ -81,22 +83,26 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnCompleteListener(this,task ->{
                     if(task.isSuccessful()){
                         User user = new User(name, email);
-                        firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser().getUid())
+                        firebaseFirestore.collection("users")
+                                .document(firebaseAuth.getCurrentUser().getUid())
                                 .set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
                                     sendEmailVerification();
-                                        //Toast.makeText(RegisterActivity.this,"User Successfully Created",Toast.LENGTH_SHORT);
+
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(RegisterActivity.this, "Error User Not Created", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(RegisterActivity.this
+                                                , "Error User Not Created"
+                                                , Toast.LENGTH_SHORT).show();
                                     }
                                 });
 
                     }else {
-                        Toast.makeText(this, "Create User With Email Failed" + task.getException(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Create User With Email Failed"
+                                + task.getException(), Toast.LENGTH_SHORT).show();
                         Log.d(TAG, "Create User With Email Failed" + task.getException());
                     }
 
@@ -111,12 +117,13 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()) {
-                    //Toast.makeText(RegisterActivity.this, "Confirmation has be sent to sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(RegisterActivity.this,ConfirmRegDetailsActivity.class);
+                    Intent intent = new Intent(RegisterActivity.this,
+                            ConfirmRegDetailsActivity.class);
                     intent.putExtra("EMAIL", user.getEmail());
                     startActivity(intent);
                 }else{
-                    Toast.makeText(RegisterActivity.this, "Failed to send verification email.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,
+                            "Failed to send verification email.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

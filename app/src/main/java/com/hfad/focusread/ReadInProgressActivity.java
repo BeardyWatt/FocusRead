@@ -149,7 +149,8 @@ public class ReadInProgressActivity extends Activity {
         yesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ReadInProgressActivity.this,SessionFinishedActivity.class);
+                Intent intent = new Intent(ReadInProgressActivity.this
+                        ,SessionFinishedActivity.class);
                 intent.putExtra("TITLE", title);
                 intent.putExtra("AUTHOR", author);
                 intent.putExtra("NOP", pages);

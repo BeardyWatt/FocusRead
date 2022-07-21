@@ -28,13 +28,15 @@ public class BookAddSuccessActivity extends AppCompatActivity {
         String author = intent.getStringExtra("AUTHOR");
         int pages = intent.getIntExtra("NOP", 1);
 
-        bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "  + pages);
+        bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author +
+                "\n" + "No. of Pages: "  + pages);
 
 
         startReadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BookAddSuccessActivity.this,SetupReadActivity.class);
+                Intent intent = new Intent(BookAddSuccessActivity.this
+                        ,SetupReadActivity.class);
                 startActivity(intent);
             }
         });
@@ -42,7 +44,8 @@ public class BookAddSuccessActivity extends AppCompatActivity {
         viewBookListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BookAddSuccessActivity.this,BookListActivity.class);
+                Intent intent = new Intent(BookAddSuccessActivity.this
+                        ,BookListActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,7 +54,8 @@ public class BookAddSuccessActivity extends AppCompatActivity {
         addAnotherBookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BookAddSuccessActivity.this,AddBookActivity.class);
+                Intent intent = new Intent(BookAddSuccessActivity.this
+                        ,AddBookActivity.class);
                 startActivity(intent);
             }
         });

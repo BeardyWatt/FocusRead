@@ -36,7 +36,8 @@ public class SetupReadActivity extends AppCompatActivity {
         int startPage = intent.getIntExtra("STARTPAGE", 1);
 
 
-        bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "  + pages + "\n" + "Status " + status );
+        bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "
+                + pages + "\n" + "Status " + status );
         startFromET.setText(startPage);
 
 
@@ -46,7 +47,8 @@ public class SetupReadActivity extends AppCompatActivity {
                 int newStartPage = Integer.parseInt(startFromET.getText().toString());
                 int target = Integer.parseInt(targetET.getText().toString());
 
-                Intent intent = new Intent(SetupReadActivity.this,ReadInProgressActivity.class);
+                Intent intent = new Intent(SetupReadActivity.this,
+                        ReadInProgressActivity.class);
 
                 intent.putExtra("TITLE", title);
                 intent.putExtra("AUTHOR", author);
@@ -62,7 +64,8 @@ public class SetupReadActivity extends AppCompatActivity {
         viewStatsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SetupReadActivity.this,BookDetailStatsActivity.class);
+                Intent intent = new Intent(SetupReadActivity.this,
+                        BookDetailStatsActivity.class);
                 startActivity(intent);
             }
         });

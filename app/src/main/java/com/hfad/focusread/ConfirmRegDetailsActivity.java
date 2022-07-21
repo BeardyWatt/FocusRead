@@ -27,7 +27,8 @@ public class ConfirmRegDetailsActivity extends AppCompatActivity {
         goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConfirmRegDetailsActivity.this, LoginActivity.class);
+                Intent intent = new Intent(ConfirmRegDetailsActivity.this
+                        , LoginActivity.class);
                 startActivity(intent);
             }
         });
