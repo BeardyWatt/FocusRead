@@ -44,7 +44,7 @@ public class BookDetailStatsActivity extends AppCompatActivity {
 
         returnHomeBtn = findViewById(R.id.return_home_btn);
         bookStatDetailTxt = findViewById(R.id.book_info_txt);
-        recyclerView = (RecyclerView) findViewById(R.id.stat_recyclerview);
+        recyclerView = (RecyclerView) findViewById(R.id.booklist_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         statList = new ArrayList<Statistic>();
         emptyTxt = findViewById(R.id.stat_empty_view);

@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/user_agreement_title">
 
         <TextView
-            android:id="@+id/user_agreement_doc"
+            android:id="@+id/user_agreement_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/user_agreement_page" />

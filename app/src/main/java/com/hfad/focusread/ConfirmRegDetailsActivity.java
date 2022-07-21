@@ -21,7 +21,7 @@ public class ConfirmRegDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String email = intent.getStringExtra("EMAIL");
-        emailText = findViewById(R.id.user_reg_email);
+        emailText = findViewById(R.id.user_reg_email_txt);
         emailText.setText(email);
 
         goToLogin.setOnClickListener(new View.OnClickListener() {

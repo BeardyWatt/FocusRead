@@ -50,8 +50,8 @@ public class LoginActivity extends BaseActivity {
 
     }
     private void manageLogin() {
-        emailEditText = findViewById(R.id.email_input_edit);
-        passwordEditText = findViewById(R.id.password_input_edit);
+        emailEditText = findViewById(R.id.email_input_et);
+        passwordEditText = findViewById(R.id.password_input_et);
         loginBtn = findViewById(R.id.login_btn);
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

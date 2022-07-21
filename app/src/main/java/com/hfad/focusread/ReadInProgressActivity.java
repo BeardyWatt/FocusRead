@@ -1,7 +1,5 @@
 package com.hfad.focusread;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -184,7 +182,7 @@ public class ReadInProgressActivity extends Activity {
         // Get the text view.
         final TextView timeView
                 = (TextView)findViewById(
-                R.id.timer_tv);
+                R.id.timer_txt);
 
         // Creates a new Handler
         final Handler handler

@@ -8,7 +8,7 @@
     tools:context=".SetupReadActivity">
 
     <ImageView
-        android:id="@+id/logo_2"
+        android:id="@+id/fs_logo_image"
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginStart="16dp"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/fr_logo2" />
 
     <TextView
-        android:id="@+id/setup_title"
+        android:id="@+id/setup_bio_txt"
         android:layout_width="270dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
@@ -35,10 +35,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_2" />
+        app:layout_constraintTop_toBottomOf="@+id/fs_logo_image" />
 
     <TextView
-        android:id="@+id/start_book_info_added"
+        android:id="@+id/start_book_info_added_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setup_title" />
+        app:layout_constraintTop_toBottomOf="@+id/setup_bio_txt" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout"
@@ -63,10 +63,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start_book_info_added">
+        app:layout_constraintTop_toBottomOf="@+id/start_book_info_added_txt">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/start_from_edit_text"
+            android:id="@+id/start_from_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/start_from"
@@ -86,7 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/target_edit_text"
+            android:id="@+id/target_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/set_target"

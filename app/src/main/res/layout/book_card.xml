@@ -20,7 +20,7 @@
 
 
         <TextView
-            android:id="@+id/textBookTitle"
+            android:id="@+id/book_title_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Title"
@@ -31,14 +31,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textAuthor"
+            android:id="@+id/author_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Author"
             android:textColor="@color/f_black"
             android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textBookTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/book_title_txt" />
 
         <TextView
             android:id="@+id/no_pages_txt"
@@ -48,10 +48,10 @@
             android:textColor="@color/f_black"
             android:textSize="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textAuthor" />
+            app:layout_constraintTop_toBottomOf="@+id/author_txt" />
 
         <ImageView
-            android:id="@+id/progressIcon"
+            android:id="@+id/progress_icon"
             android:layout_width="80dp"
             android:layout_height="80dp"
             app:layout_constraintBottom_toBottomOf="parent"

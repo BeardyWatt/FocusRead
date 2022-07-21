@@ -41,7 +41,7 @@ public class BookListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_list);
         addNewBookBtn = findViewById(R.id.add_book_btn);
-        recyclerView = (RecyclerView) findViewById(R.id.stat_recyclerview);
+        recyclerView = (RecyclerView) findViewById(R.id.booklist_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         bookList = new ArrayList<Book>();
         adapter = new MyAdapter(this,bookList);
@@ -84,7 +84,6 @@ public class BookListActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                 }
             }
-
         });
     }
     @Override

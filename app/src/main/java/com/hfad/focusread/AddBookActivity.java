@@ -1,8 +1,5 @@
 package com.hfad.focusread;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,17 +7,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class AddBookActivity extends BaseActivity {
     Button btnAddBook, btnHome;
     EditText bookTitle, authorName, numberOfPages;
-    DatabaseReference databaseUsers;
+
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
     @Override
@@ -30,9 +24,9 @@ public class AddBookActivity extends BaseActivity {
         btnAddBook = findViewById(R.id.add_book_btn);
         btnHome= findViewById(R.id.return_home_btn);
 
-        bookTitle = findViewById(R.id.book_title_input_edit);
-        authorName = findViewById(R.id.book_author_input_edit);
-        numberOfPages = findViewById(R.id.nop_input_edit);
+        bookTitle = findViewById(R.id.book_title_input_et);
+        authorName = findViewById(R.id.book_author_input_et);
+        numberOfPages = findViewById(R.id.nop_input_et);
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 

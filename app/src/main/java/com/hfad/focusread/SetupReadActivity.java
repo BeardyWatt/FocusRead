@@ -22,10 +22,10 @@ public class SetupReadActivity extends AppCompatActivity {
 
         startReadBtn = findViewById(R.id.start_read_btn);
         viewStatsBtn = findViewById(R.id.view_stats_btn);
-        startFromET = findViewById(R.id.start_from_edit_text);
-        targetET = findViewById(R.id.target_edit_text);
+        startFromET = findViewById(R.id.start_from_et);
+        targetET = findViewById(R.id.target_et);
 
-        bookInfoTxt = findViewById(R.id.start_book_info_added);
+        bookInfoTxt = findViewById(R.id.start_book_info_added_txt);
 
         Intent intent = getIntent();
 

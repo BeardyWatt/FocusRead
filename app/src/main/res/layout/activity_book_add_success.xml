@@ -8,7 +8,7 @@
     tools:context=".BookAddSuccessActivity">
 
     <ImageView
-        android:id="@+id/logo_2"
+        android:id="@+id/fs_logo_image"
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginStart="16dp"
@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/fr_logo2" />
 
     <TextView
-        android:id="@+id/book_success_title"
+        android:id="@+id/book_success_header_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -34,11 +34,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_2"
+        app:layout_constraintTop_toBottomOf="@+id/fs_logo_image"
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/book_info_added"
+        android:id="@+id/book_info_added_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_success_title" />
+        app:layout_constraintTop_toBottomOf="@+id/book_success_header_txt" />
 
     <Button
         android:id="@+id/start_read_btn"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/book_info_added" />
+        app:layout_constraintTop_toBottomOf="@+id/book_info_added_txt" />
 
     <Button
         android:id="@+id/view_book_list_btn"

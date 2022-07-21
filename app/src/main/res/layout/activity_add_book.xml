@@ -8,7 +8,7 @@
     tools:context=".AddBookActivity">
 
     <ImageView
-        android:id="@+id/logo_2"
+        android:id="@+id/fs_logo_image"
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginStart="16dp"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/fr_logo2" />
 
     <TextView
-        android:id="@+id/add_book_header"
+        android:id="@+id/add_book_header_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo_2">
+        app:layout_constraintTop_toBottomOf="@id/fs_logo_image">
 
     </TextView>
 
@@ -52,10 +52,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/add_book_header">
+        app:layout_constraintTop_toBottomOf="@id/add_book_header_txt">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/book_title_input_edit"
+            android:id="@+id/book_title_input_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/book_title"
@@ -81,7 +81,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/book_author_input_edit"
+            android:id="@+id/book_author_input_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/book_author"
@@ -107,7 +107,7 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nop_input_edit"
+            android:id="@+id/nop_input_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/number_of_pages"

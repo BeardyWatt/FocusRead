@@ -45,10 +45,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         TextView bookTitle, bookAuthor, numberOfPages, status;
         public ViewHolder(@NonNull View itemView) {
            super(itemView);
-            bookTitle = (TextView) itemView.findViewById(R.id.textBookTitle);
-            bookAuthor = (TextView) itemView.findViewById(R.id.textAuthor);
+            bookTitle = (TextView) itemView.findViewById(R.id.book_title_txt);
+            bookAuthor = (TextView) itemView.findViewById(R.id.author_txt);
             numberOfPages = (TextView) itemView.findViewById(R.id.no_pages_txt);
-            status = itemView.findViewById(R.id.status);
+            //status = itemView.findViewById(R.id.);
             itemView.setOnClickListener(this);
        }
        void bindTo(Book currentBook){

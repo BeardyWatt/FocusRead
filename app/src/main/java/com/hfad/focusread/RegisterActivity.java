@@ -35,10 +35,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        nameInputEditText = findViewById(R.id.username_input_edit);
-        emailInputEditText = findViewById(R.id.emails_input_edit);
-        passwordInputEditText = findViewById(R.id.passwords_input_edit);
-        cPasswordInputEditText = findViewById(R.id.confirm_passwords_input_edit);
+        nameInputEditText = findViewById(R.id.username_input_et);
+        emailInputEditText = findViewById(R.id.emails_input_et);
+        passwordInputEditText = findViewById(R.id.passwords_input_et);
+        cPasswordInputEditText = findViewById(R.id.confirm_passwords_input_et);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();

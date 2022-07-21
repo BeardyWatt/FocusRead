@@ -8,7 +8,7 @@
     tools:context=".ReadLoggedActivity">
 
     <ImageView
-        android:id="@+id/logo_2"
+        android:id="@+id/fs_logo_image"
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginStart="16dp"
@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/fr_logo2" />
 
     <TextView
-        android:id="@+id/read_logged_title"
+        android:id="@+id/read_logged_header_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -34,11 +34,11 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_2"
+        app:layout_constraintTop_toBottomOf="@+id/fs_logo_image"
         tools:ignore="Text_contrast_check" />
 
     <TextView
-        android:id="@+id/read_logged_place_holder"
+        android:id="@+id/read_logged_place_holder_txt"
         android:layout_width="310dp"
         android:layout_height="150dp"
         android:layout_marginStart="16dp"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/read_logged_title" />
+        app:layout_constraintTop_toBottomOf="@+id/read_logged_header_txt" />
 
     <Button
         android:id="@+id/set_read_reminder_btn"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/read_logged_place_holder" />
+        app:layout_constraintTop_toBottomOf="@+id/read_logged_place_holder_txt" />
 
     <Button
         android:id="@+id/view_stats_btn"
