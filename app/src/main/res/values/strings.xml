@@ -109,4 +109,14 @@
     <string name="select_time_btn">Select Time</string>
     <string name="set_btn">Set</string>
 
+    <!--Strings for end_read_dialog -->
+    <string name="end_dialog_title">Focus Read</string>
+    <string name="end_dialog_bio">Are you sure you want to end the read session?</string>
+    <string name="yes_btn">Yes</string>
+    <string name="no_btn">No</string>
+
+    <!--Strings for confirm_book_details_dialog -->
+    <string name="book_dialog_title">Focus Read</string>
+    <string name="book_dialog_bio">Confirm Book Details are Correct</string>
+
 </resources>
