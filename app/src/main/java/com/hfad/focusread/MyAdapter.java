@@ -55,8 +55,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
        void bindTo(Book currentBook){
             bookTitle.setText(currentBook.getBookTitle());
             bookAuthor.setText(currentBook.getBookAuthor());
-            numberOfPages.setText(currentBook.getNumberOfPages());
-            status.setText(currentBook.getStatus());
+            numberOfPages.setText(String.valueOf(currentBook.getNumberOfPages()));
+            //status.setText(currentBook.getStatus());
        }
        public void onClick(View v){
             Book currentBook = bookList.get(getAdapterPosition());
