@@ -2,27 +2,29 @@ package com.hfad.focusread;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ReadInProgressActivity extends Activity {
 
-    Button pauseBtn, continueBtn, endBtn;
-    // Number of seconds displayed
-    // on the stopwatch.
-    private int seconds = 0;
-    // Is the stopwatch running?
-    private boolean running;
-    private boolean wasRunning;
-
     private String title, author, status;
     private  int pages, target, startPage;
+    private TextView timerTxt;
+    private Button startPauseBtn, resetBtn, stopBtn;
+    private Timer timer;
+    private TimerTask timerTask;
+    private Double time = 0.0;
+    private boolean timeStarted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,7 +32,6 @@ public class ReadInProgressActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_in_progess);
         Intent intent = getIntent();
-
         title = intent.getStringExtra("TITLE");
         author = intent.getStringExtra("AUTHOR");
         pages = intent.getIntExtra("NOP", 1);
@@ -38,106 +39,91 @@ public class ReadInProgressActivity extends Activity {
         target = intent.getIntExtra("TARGET", 1);
         startPage = intent.getIntExtra("STARTPAGE", 1);
 
-        if (savedInstanceState != null) {
-            onStart();
+        timerTxt = findViewById(R.id.timer_txt);
+        startPauseBtn = findViewById(R.id.start_pause_btn);
+        resetBtn = findViewById(R.id.reset_btn);
+        stopBtn = findViewById(R.id.stop_btn);
+        timer = new Timer();
+
+        startPauseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              if(timeStarted == false){
+                  timeStarted = true;
+                  startPauseBtn.setText("Pause");
+                  startTimer();
+              }else{
+                  timeStarted = false;
+                  startPauseBtn.setText("Start");
+                  timerTask.cancel();
+              }
+            }
+        });
+        resetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder resetAlert = new AlertDialog.Builder(ReadInProgressActivity.this);
+                resetAlert.setTitle("Reset Timer");
+                resetAlert.setMessage("Are you sure you want to Reset the Timer?");
+                resetAlert.setPositiveButton("Reset", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(timerTask != null){
+                            timerTask.cancel();
+                            startPauseBtn.setText("Start");
+                            time = 0.0;
+                            timeStarted = false;
+                            timerTxt.setText(formatTime(0,0,0));
+                        }
+                    }
+                });
+                resetAlert.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Do Nothing.
+                    }
+                });
+                resetAlert.show();
+            }
+        });
+        stopBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showStopDialog();
+            }
+        });
 
 
-            // Get the previous state of the stopwatch
-            // if the activity has been
-            // destroyed and recreated.
-            seconds
-                    = savedInstanceState
-                    .getInt("seconds");
-            running
-                    = savedInstanceState
-                    .getBoolean("running");
-            wasRunning
-                    = savedInstanceState
-                    .getBoolean("wasRunning");
-        }
-        runTimer();
-    }
-    // Save the state of the stopwatch
-    // if it's about to be destroyed.
-    @Override
-    public void onSaveInstanceState(
-            Bundle savedInstanceState)
-    {
-        savedInstanceState
-                .putInt("seconds", seconds);
-        savedInstanceState
-                .putBoolean("running", running);
-        savedInstanceState
-                .putBoolean("wasRunning", wasRunning);
 
-    // Start the stopwatch running
-    // Below method gets called
-    // On open ReadInProgressActivity
-    }
-    protected void onStart() {
-        super.onStart();
-        running = true;
-    }
-
-    // If the activity is paused,
-    // stop the stopwatch.
-    @Override
-    protected void onPause()
-    {
-        super.onPause();
-        wasRunning = running;
-        running = false;
-    }
-
-    // If the activity is resumed,
-    // start the stopwatch
-    // again if it was running previously.
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-        if (wasRunning) {
-            running = true;
-        }
     }
 
-    // If the activity is resumed,
-    // start the stopwatch
-    // again if it was running previously.
-    @Override
-    protected void onStop()
-    {
-        super.onStop();
-        wasRunning = running;
-            running = false;
+    private void startTimer() {
+       timerTask = new TimerTask() {
+           @Override
+           public void run() {
+               runOnUiThread(new Runnable() {
+                   @Override
+                   public void run() {
+                       time ++;
+                       timerTxt.setText(getTimerText());
+                   }
+               });
+           }
+       };
+       timer.scheduleAtFixedRate(timerTask, 0, 1000);
     }
 
-    // Stop the stopwatch running
-    // when the Pause button is clicked.
-    // Below method gets called
-    // when the Pause button is clicked.
-    public void onClickPause(View view)
-    {
-        running = false;
+    private String getTimerText() {
+        int rounded = (int) Math.round(time);
+        int seconds = ((rounded % 86400) % 3600) % 60;
+        int minutes = ((rounded % 86400) % 3600) / 60;
+        int hours = ((rounded % 86400) / 3600);
+        return formatTime(seconds, minutes, hours);
     }
 
-    // Reset the stopwatch when
-    // the Resume button is clicked.
-    // Below method gets called
-    // when the Resume button is clicked.
-    public void onClickResume(View view)
-    {
-        running = true;
-    }
-
-    // Stop the stopwatch running
-    // when the Stop button is clicked.
-    // Below method gets called
-    // when the Stop button is clicked.
-    public void onClickStop(View view)
-    {
-        showStopDialog();
-        running = false;
+    private String formatTime(int seconds, int minutes, int hours) {
+        return String.format("%02d", hours) + ":" + String.format("%02d", minutes) +  ":" +
+                String.format("%02d", seconds);
     }
 
     private void showStopDialog() {
@@ -157,7 +143,7 @@ public class ReadInProgressActivity extends Activity {
                 intent.putExtra("STATUS", status);
                 intent.putExtra("STARTPAGE", startPage);
                 intent.putExtra("TARGET", target);
-                //we need to send the time logged
+                intent.putExtra("TIME" , getTimerText());
 
                 startActivity(intent);
             }
@@ -171,60 +157,6 @@ public class ReadInProgressActivity extends Activity {
                 //continue timer
             }
         });
-    }
-
-    // Sets the Number of seconds on the timer.
-    // The runTimer() method uses a Handler
-    // to increment the seconds and
-    // update the text view.
-    private void runTimer()
-    {
-
-        // Get the text view.
-        final TextView timeView
-                = (TextView)findViewById(
-                R.id.timer_txt);
-
-        // Creates a new Handler
-        final Handler handler
-                = new Handler();
-
-        // Call the post() method,
-        // passing in a new Runnable.
-        // The post() method processes
-        // code without a delay,
-        // so the code in the Runnable
-        // will run almost immediately.
-        handler.post(new Runnable() {
-            @Override
-
-            public void run()
-            {
-                int hours = seconds / 3600;
-                int minutes = (seconds % 3600) / 60;
-                int secs = seconds % 60;
-
-                // Format the seconds into hours, minutes,
-                // and seconds.
-                String time
-                        = String
-                        .format(Locale.getDefault(),
-                                "%d:%02d:%02d", hours,
-                                minutes, secs);
-
-                // Set the text view text.
-                timeView.setText(time);
-
-                // If running is true, increment the
-                // seconds variable.
-                if (running) {
-                    seconds++;
-                }
-
-                // Post the code again
-                // with a delay of 1 second.
-                handler.postDelayed(this, 1000);
-            }
-        });
+        stopDialog.show();
     }
 }

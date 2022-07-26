@@ -56,14 +56,13 @@
         app:layout_constraintTop_toBottomOf="@+id/read_header_txt" />
 
     <Button
-        android:id="@+id/pause_btn"
+        android:id="@+id/start_pause_btn"
         android:layout_width="266dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/pause_btn"
-        android:onClick="onClickPause"
+        android:text="Start Read"
         app:icon="@drawable/pause_read_icon_foreground"
         app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,20 +71,19 @@
         app:layout_constraintTop_toBottomOf="@+id/timer_txt" />
 
     <Button
-        android:id="@+id/continue_btn"
+        android:id="@+id/reset_btn"
         android:layout_width="263dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/continue_btn"
-        android:onClick="onClickResume"
+        android:text="Reset"
         app:icon="@drawable/start_read_icon_foreground"
         app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pause_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/start_pause_btn" />
 
     <Button
         android:id="@+id/stop_btn"
@@ -95,12 +93,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="@string/end_btn"
-        android:onClick="onClickStop"
         app:icon="@drawable/stop_read_icon_foreground"
         app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/continue_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/reset_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

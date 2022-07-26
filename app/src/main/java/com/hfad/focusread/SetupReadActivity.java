@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,14 +39,19 @@ public class SetupReadActivity extends AppCompatActivity {
 
         bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "
                 + pages + "\n" + "Status " + status );
-        startFromET.setText(startPage);
+        startFromET.setText("" + startPage);
 
 
         startReadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int newStartPage = Integer.parseInt(startFromET.getText().toString());
-                int target = Integer.parseInt(targetET.getText().toString());
+                String targetStr = targetET.getText().toString();
+                int target = pages;
+                if(! TextUtils.isEmpty(targetStr)){
+                    target = Integer.parseInt(targetStr);
+                }
+
 
                 Intent intent = new Intent(SetupReadActivity.this,
                         ReadInProgressActivity.class);

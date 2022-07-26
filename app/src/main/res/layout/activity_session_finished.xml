@@ -30,111 +30,88 @@
         android:text="@string/session_finished_title"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="48sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fs_logo_image" />
 
-    <LinearLayout
-        android:id="@+id/linear_layout_start"
-        android:layout_width="382dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="1dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/session_finished_header_txt">
-
-        <TextView
-            android:id="@+id/start_from_txt"
-            android:layout_width="19dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/started_from"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/start_result_txt"
-            android:layout_width="4dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/liner_layout_target"
-        android:layout_width="379dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear_layout_start">
-
-        <TextView
-            android:id="@+id/target_txt"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/target"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/targetSet_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/end_page_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/end_page"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/liner_layout_target" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout_end_page"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/end_page_txt">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ended_on_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="eg.123" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/log_read_btn"
         android:layout_width="265dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="@string/log_read_btn"
         app:icon="@drawable/book_icon_foreground"
         app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_input_layout_end_page"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/end_page_et" />
+
+    <TextView
+        android:id="@+id/start_from_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/started_from"
+        app:layout_constraintBaseline_toBaselineOf="@+id/start_page_txt"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/start_page_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/start_from_txt"
+        app:layout_constraintTop_toBottomOf="@+id/session_finished_header_txt" />
+
+    <TextView
+        android:id="@+id/target_set_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/target"
+        app:layout_constraintBaseline_toBaselineOf="@+id/target_txt"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/target_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/target_set_txt"
+        app:layout_constraintTop_toBottomOf="@+id/start_page_txt" />
+
+    <TextView
+        android:id="@+id/ended_on_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/end_page"
+        app:layout_constraintBaseline_toBaselineOf="@+id/end_page_et"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/end_page_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="000"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/ended_on_txt"
+        app:layout_constraintTop_toBottomOf="@+id/target_txt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
