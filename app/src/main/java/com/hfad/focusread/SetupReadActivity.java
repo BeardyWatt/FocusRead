@@ -72,6 +72,12 @@ public class SetupReadActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SetupReadActivity.this,
                         BookDetailStatsActivity.class);
+
+                intent.putExtra("TITLE", title);
+                intent.putExtra("AUTHOR", author);
+                intent.putExtra("NOP", pages);
+                intent.putExtra("STATUS", status);
+
                 startActivity(intent);
             }
         });

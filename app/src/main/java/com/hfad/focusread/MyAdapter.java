@@ -21,6 +21,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         context = c;
         bookList = b;
+        //statList = s;
     }
 
     @NonNull

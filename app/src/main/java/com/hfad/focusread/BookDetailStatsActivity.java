@@ -44,9 +44,10 @@ public class BookDetailStatsActivity extends AppCompatActivity {
 
         returnHomeBtn = findViewById(R.id.return_home_btn);
         bookStatDetailTxt = findViewById(R.id.book_info_txt);
-        recyclerView = (RecyclerView) findViewById(R.id.booklist_recyclerview);
+        recyclerView = (RecyclerView) findViewById(R.id.stat_list_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         statList = new ArrayList<Statistic>();
+        //adapter = new MyAdapter(this, statList);
         emptyTxt = findViewById(R.id.stat_empty_view);
         progressBar = findViewById(R.id.progressBar);
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -56,7 +57,7 @@ public class BookDetailStatsActivity extends AppCompatActivity {
 
         String title = intent.getStringExtra("TITLE");
         String author = intent.getStringExtra("AUTHOR");
-        String pages = intent.getStringExtra("NOP");
+        int pages = intent.getIntExtra("NOP", 1);
 
         bookStatDetailTxt.setText("Book: " + title + "\n" + "Author: " + author +
                 "\n" + "No. of Pages: "  + pages);
@@ -73,39 +74,5 @@ public class BookDetailStatsActivity extends AppCompatActivity {
 
 
     }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        statList.clear();
-        final CollectionReference collection = firebaseFirestore.collection("users")
-                .document(firebaseAuth.getCurrentUser().getUid()).collection("books");
-        statListener = collection.addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@Nullable QuerySnapshot value
-                    , @Nullable FirebaseFirestoreException error) {
-                if(error != null) {
-                    Toast.makeText(BookDetailStatsActivity.this
-                            , "Loading Data Failed ", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(value.isEmpty()){
-                    progressBar.setVisibility(View.GONE);
-                    emptyTxt.setVisibility(View.VISIBLE);
-                }
-                for(DocumentChange dc:value.getDocumentChanges()){
-                    DocumentSnapshot documentSnapshot = dc.getDocument();
-                    Statistic stat = documentSnapshot.toObject(Statistic.class);
-                    statList.add(stat);
-                    //adapter.notifyDataSetChanged();
-                    progressBar.setVisibility(View.GONE);
-                }
-            }
 
-        });
-    }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        statListener.remove();
-    }
 }
