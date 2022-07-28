@@ -23,9 +23,6 @@
             android:name=".BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".BookDetailStatsActivity"
-            android:exported="false" />
-        <activity
             android:name=".StatsActivity"
             android:exported="false" />
         <activity

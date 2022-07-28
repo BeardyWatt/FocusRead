@@ -71,7 +71,7 @@ public class SetupReadActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SetupReadActivity.this,
-                        BookDetailStatsActivity.class);
+                        StatsActivity.class);
 
                 intent.putExtra("TITLE", title);
                 intent.putExtra("AUTHOR", author);

@@ -124,5 +124,7 @@
     <string name="target_hit_txt">Congratulations!! \n You it your target</string>
     <string name="target_not_hit_txt">Sorry, You didn\'t hit \n your target this time.</string>
 
-
+    <!--Strings for stat_card -->
+    <string name="stat_reading_time_txt">Reading Time : </string>
+    <string name="stat_pages_read_txt">Pages Read : </string>
 </resources>

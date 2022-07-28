@@ -1,6 +1,5 @@
 package com.hfad.focusread;
 
-import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ReadLoggedActivity extends AppCompatActivity {
 
@@ -68,7 +66,7 @@ public class ReadLoggedActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ReadLoggedActivity
-                        .this,BookDetailStatsActivity.class);
+                        .this, StatsActivity.class);
                 startActivity(intent);
             }
         });
