@@ -119,4 +119,10 @@
     <string name="book_dialog_title">Focus Read</string>
     <string name="book_dialog_bio">Confirm Book Details are Correct</string>
 
+
+    <!--Strings for confirm_read_logged -->
+    <string name="target_hit_txt">Congratulations!! \n You it your target</string>
+    <string name="target_not_hit_txt">Sorry, You didn\'t hit \n your target this time.</string>
+
+
 </resources>

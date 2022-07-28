@@ -83,6 +83,7 @@ public class BookListActivity extends AppCompatActivity {
                 }
                 for(DocumentChange dc:value.getDocumentChanges()){
                     DocumentSnapshot documentSnapshot = dc.getDocument();
+                    //documentSnapshot.getId();
                     Book book = documentSnapshot.toObject(Book.class);
                     bookList.add(book);
                     adapter.notifyDataSetChanged();

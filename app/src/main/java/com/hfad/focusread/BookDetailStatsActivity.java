@@ -1,6 +1,5 @@
 package com.hfad.focusread;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,17 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -30,7 +22,7 @@ public class BookDetailStatsActivity extends AppCompatActivity {
     Button returnHomeBtn;
     TextView bookStatDetailTxt;
     RecyclerView recyclerView;
-    ArrayList<Statistic> statList;
+    ArrayList<ReadSession> statList;
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
     TextView emptyTxt;
@@ -46,7 +38,7 @@ public class BookDetailStatsActivity extends AppCompatActivity {
         bookStatDetailTxt = findViewById(R.id.book_info_txt);
         recyclerView = (RecyclerView) findViewById(R.id.stat_list_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        statList = new ArrayList<Statistic>();
+        statList = new ArrayList<ReadSession>();
         //adapter = new MyAdapter(this, statList);
         emptyTxt = findViewById(R.id.stat_empty_view);
         progressBar = findViewById(R.id.progressBar);

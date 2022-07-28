@@ -2,6 +2,7 @@ package com.hfad.focusread;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +34,7 @@ public class AddBookActivity extends BaseActivity {
         btnAddBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 InsertBookData();
             }
         });
@@ -72,4 +74,26 @@ public class AddBookActivity extends BaseActivity {
                         hideProgressDialog();
                     });
     }
+
+   /* private boolean validForm(String bookBookTitle, String bookAuthorName, int bookNumberOfPages){
+
+        boolean valid = true;
+        if (TextUtils.isEmpty(bookBookTitle)){
+            bookTitle.setError("Book Title Required");
+            valid = false;
+        } else
+            bookTitle.setError(null);
+        if (TextUtils.isEmpty(bookAuthorName)){
+            authorName.setError("Book Author Required");
+            valid = false;
+        } else
+            authorName.setError(null);
+        if (TextUtils.isEmpty(bookNumberOfPages)){
+            numberOfPages.setError("Number of Pages Required");
+            valid = false;
+        } else
+            numberOfPages.setError(null);
+
+        return valid;
+    }*/
 }

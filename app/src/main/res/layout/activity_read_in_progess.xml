@@ -12,7 +12,6 @@
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginStart="16dp"
-        android:visibility="visible"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +71,7 @@
 
     <Button
         android:id="@+id/reset_btn"
-        android:layout_width="263dp"
+        android:layout_width="266dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -87,7 +86,7 @@
 
     <Button
         android:id="@+id/stop_btn"
-        android:layout_width="263dp"
+        android:layout_width="266dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"

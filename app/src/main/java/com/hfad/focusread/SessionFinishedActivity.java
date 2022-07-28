@@ -11,18 +11,32 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SessionFinishedActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class SessionFinishedActivity extends BaseActivity {
     Button logTheReadBtn;
     EditText endedOnET;
     private String title, author, status, time;
     private  int pages, target, startPage, endPage;
     private TextView startPageTxt, targetTxt;
+    private  boolean targetHit = true;
+    private FirebaseFirestore firebaseFirestore;
+    private FirebaseAuth firebaseAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_session_finished);
+
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+
         Intent intent = getIntent();
         title = intent.getStringExtra("TITLE");
         author = intent.getStringExtra("AUTHOR");
@@ -49,6 +63,11 @@ public class SessionFinishedActivity extends AppCompatActivity {
                     Toast.makeText(SessionFinishedActivity.this, "Please Enter An End Page", Toast.LENGTH_LONG).show();
                 }else{
                     int endPage = Integer.parseInt(endPageStr);
+                    //save read log to database.
+
+                    insertReadSession();
+                    //update start page to end page in database.
+
                     Intent intent = new Intent(SessionFinishedActivity.this,
                             ReadLoggedActivity.class);
                     intent.putExtra("TITLE", title);
@@ -61,9 +80,39 @@ public class SessionFinishedActivity extends AppCompatActivity {
                     intent.putExtra("ENDPAGE" ,endPage);
                     startActivity(intent);
 
+
                 }
 
             }
         });
+    }
+
+    private void insertReadSession() {
+        int pagesRead = endPage - startPage;
+        if (endPage < target){
+            targetHit = false;
+        }
+        String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.UK).format(new Date());
+        String bookID = "WUpNFe5cPHzYepKsx4Fr";
+
+        ReadSession readSession = new ReadSession(pagesRead,targetHit, currentDate, time);
+        showProgressDialog("please wait while we add your Reading Session");
+        firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser()
+                        .getUid())
+                .collection("books").document(bookID).collection("read_logs")
+                .add(readSession).addOnSuccessListener(aVoid -> {
+                    hideProgressDialog();
+                    Intent intent = new Intent(SessionFinishedActivity.this
+                            ,ReadLoggedActivity.class);
+                    intent.putExtra("READTIME",time);
+                    intent.putExtra("PAGESREAD",pagesRead);
+                    intent.putExtra("TARGETHIT", targetHit);
+                    startActivity(intent);
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "Reading Session was unsuccessfully added to the Collection"
+                            , Toast.LENGTH_SHORT).show();
+                    hideProgressDialog();
+                });
     }
 }

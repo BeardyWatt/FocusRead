@@ -54,7 +54,7 @@ public class ReadInProgressActivity extends Activity {
                   startTimer();
               }else{
                   timeStarted = false;
-                  startPauseBtn.setText("Start");
+                  startPauseBtn.setText("Continue");
                   timerTask.cancel();
               }
             }
@@ -70,7 +70,7 @@ public class ReadInProgressActivity extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         if(timerTask != null){
                             timerTask.cancel();
-                            startPauseBtn.setText("Start");
+                            startPauseBtn.setText("Continue");
                             time = 0.0;
                             timeStarted = false;
                             timerTxt.setText(formatTime(0,0,0));
