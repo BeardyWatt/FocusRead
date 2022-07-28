@@ -3,6 +3,7 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
 
+/** class Book containing the attributes for the list**/
 public class Book {
     private  String bookTitle;
     private  String bookAuthor;

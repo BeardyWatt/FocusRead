@@ -14,6 +14,7 @@ public class BookAddSuccessActivity extends AppCompatActivity {
     private static final String TAG = "BookAddActivity";
 
     @Override
+    /** Book details will be carried over to the next activity **/
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_add_success);

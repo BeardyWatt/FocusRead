@@ -49,7 +49,7 @@ public class AddBookActivity extends BaseActivity {
         });
 
     }
-
+    /** method to add a Book object to the database**/
     private void InsertBookData() {
         String bookBookTitle = bookTitle.getText().toString();
         String bookAuthorName = authorName.getText().toString();

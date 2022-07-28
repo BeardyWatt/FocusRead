@@ -63,6 +63,7 @@ public class BookListActivity extends AppCompatActivity {
     }
 
     @Override
+    /** method to add a read data from the firebase database **/
     protected void onStart() {
         super.onStart();
         bookList.clear();

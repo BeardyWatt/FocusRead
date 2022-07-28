@@ -18,6 +18,7 @@ public class BaseActivity extends AppCompatActivity {
         progressDialog.show();
     }
 
+    /** method to hide the progress bar**/
     public void hideProgressDialog(){
         if(progressDialog != null && progressDialog.isShowing()){
             progressDialog.dismiss();
