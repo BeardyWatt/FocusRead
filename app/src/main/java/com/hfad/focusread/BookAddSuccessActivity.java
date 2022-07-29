@@ -33,14 +33,6 @@ public class BookAddSuccessActivity extends AppCompatActivity {
                 "\n" + "No. of Pages: "  + pages);
 
 
-        startReadBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BookAddSuccessActivity.this
-                        ,SetupReadActivity.class);
-                startActivity(intent);
-            }
-        });
 
         viewBookListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
