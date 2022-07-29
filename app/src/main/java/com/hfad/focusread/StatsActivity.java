@@ -24,6 +24,7 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class StatsActivity extends AppCompatActivity {
 
@@ -69,7 +70,7 @@ public class StatsActivity extends AppCompatActivity {
         bookId = intent.getStringExtra("BOOKID");
 
         bookStatDetailTxt.setText("Book: " + title + "\n" + "Author: " + author +
-                "\n" + "No. of Pages: "  + pages + "\n" + "Number of Pages Read" + pagesRead + "\n" + "Time Spent Reading" );
+                "\n" + "No. of Pages: "  + pages);
 
 
         returnHomeBtn.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +88,9 @@ public class StatsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         statList.clear();
+        final Logger LOGGER = Logger.getLogger(StatsActivity.class.getName() );
+
+        LOGGER.warning("HELLO THIS IS A TEST" + bookId);
         final CollectionReference collection = firebaseFirestore.collection("users")
                 .document(firebaseAuth.getCurrentUser().getUid()).collection("books")
                 .document(bookId).collection("read_logs");

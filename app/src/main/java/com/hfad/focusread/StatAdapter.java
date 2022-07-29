@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 
 public class StatAdapter extends RecyclerView.Adapter<StatAdapter.ViewHolder> {
@@ -51,16 +51,22 @@ public class StatAdapter extends RecyclerView.Adapter<StatAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             date = (TextView) itemView.findViewById(R.id.date_txt);
-            readingTime = (TextView) itemView.findViewById(R.id.reading_time_txt);
-            pagesRead = (TextView) itemView.findViewById(R.id.pages_read_txt);
+            readingTime = (TextView) itemView.findViewById(R.id.log_reading_time_txt);
+            pagesRead = (TextView) itemView.findViewById(R.id.log_pages_read_txt);
             //targetHit = (ImageView) itemView.findViewById(R.id.stat_target_hit_img);
             itemView.setOnClickListener(this);
         }
 
         void bindTo(ReadSession currentSession) {
+            final Logger LOGGER = Logger.getLogger(StatAdapter.class.getName() );
+
+            LOGGER.warning("HELLO THIS IS A TEST " + currentSession.getPagesRead());
             date.setText(currentSession.getDate());
+            LOGGER.warning("HELLO THIS IS A TEST " + date.getText());
             readingTime.setText(currentSession.getTime());
-            pagesRead.setText(currentSession.getPagesRead());
+            LOGGER.warning("HELLO THIS IS A TEST " + readingTime.getText());
+            //pagesRead.setText("5");
+            pagesRead.setText("" + currentSession.getPagesRead());
             //targetHit.setBoolean(currentSession.isTargetHit())
         }
 

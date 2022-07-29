@@ -15,6 +15,10 @@ public class ReadSession {
         this.time = time;
     }
 
+    public ReadSession() {
+
+    }
+
     public int getPagesRead() {
         return pagesRead;
     }

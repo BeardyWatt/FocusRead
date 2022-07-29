@@ -71,13 +71,13 @@ public class ReadLoggedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ReadLoggedActivity
                         .this, StatsActivity.class);
-               /* intent.putExtra("TITLE", title);
+                intent.putExtra("TITLE", title);
                 intent.putExtra("AUTHOR", author);
                 intent.putExtra("NOP", pages);
                 intent.putExtra("TIME",time);
                 intent.putExtra("PAGESREAD",pagesRead);
                 intent.putExtra("TARGETHIT", targetHit);
-                intent.putExtra("BOOKID", bookId);*/
+                intent.putExtra("BOOKID", bookId);
                 startActivity(intent);
             }
         });

@@ -80,7 +80,7 @@ public class SessionFinishedActivity extends BaseActivity {
     }
     /**method to add current session to the database**/
     private void insertReadSession() {
-        int pagesRead = endPage - startPage;
+        int pagesRead = endPage - startPage + 1;
         Toast.makeText(this, "end page : " + endPage, Toast.LENGTH_LONG).show();
 
        Toast.makeText(this, "Pages Read : " + pagesRead, Toast.LENGTH_SHORT).show();
