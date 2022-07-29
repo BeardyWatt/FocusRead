@@ -34,6 +34,7 @@
         android:background="@color/f_purple"
         android:text="@string/read_reminder_btn"
         android:textSize="16sp"
+        app:cornerRadius="20dp"
         app:icon="@drawable/clock_icon_foreground"
         app:layout_constraintBottom_toTopOf="@+id/view_stats_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +67,7 @@
         android:background="@color/f_purple"
         android:text="@string/view_stats_btn"
         android:textSize="16sp"
+        app:cornerRadius="50dp"
         app:icon="@drawable/stat_icon_foreground"
         app:layout_constraintBottom_toTopOf="@+id/return_home_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,6 +81,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/f_green"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -88,7 +91,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:background="@color/f_green">
 
             <TextView
                 android:id="@+id/textView"
@@ -96,6 +100,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="You Read : "
+                android:textColor="@color/white"
+                android:textSize="16sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/page_read_txt"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -106,6 +112,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="35"
+                android:textColor="@color/white"
+                android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,6 +123,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="Reading Time : "
+                android:textColor="@color/white"
+                android:textSize="16sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/reading_time_txt"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -125,6 +135,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:text="00:30:00"
+                android:textColor="@color/white"
+                android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/textView3"
                 app:layout_constraintTop_toBottomOf="@+id/page_read_txt" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -136,6 +148,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/f_green"
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -152,7 +165,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Congratulations! You hit your Target"
+                android:text="@string/target_hit_txt"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

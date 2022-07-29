@@ -1,5 +1,6 @@
 package com.hfad.focusread;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,7 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
@@ -21,7 +25,8 @@ import java.util.Locale;
 public class SessionFinishedActivity extends BaseActivity {
     Button logTheReadBtn;
     EditText endedOnET;
-    private String title, author, status, time;
+    private String title, author, status, time, bookId;
+
     private  int pages, target, startPage, endPage;
     private TextView startPageTxt, targetTxt;
     private  boolean targetHit = true;
@@ -45,6 +50,7 @@ public class SessionFinishedActivity extends BaseActivity {
         target = intent.getIntExtra("TARGET", 1);
         startPage = intent.getIntExtra("STARTPAGE", 1);
         time = intent.getStringExtra("TIME");
+        bookId = intent.getStringExtra("BOOKID");
 
         targetTxt = findViewById(R.id.target_txt);
         startPageTxt = findViewById(R.id.start_page_txt);
@@ -62,51 +68,63 @@ public class SessionFinishedActivity extends BaseActivity {
                 if(TextUtils.isEmpty(endPageStr)) {
                     Toast.makeText(SessionFinishedActivity.this, "Please Enter An End Page", Toast.LENGTH_LONG).show();
                 }else{
-                    int endPage = Integer.parseInt(endPageStr);
+                    endPage = Integer.parseInt(endPageStr);
                     //save read log to database.
 
                     insertReadSession();
                     //update start page to end page in database.
-
-                    Intent intent = new Intent(SessionFinishedActivity.this,
-                            ReadLoggedActivity.class);
-                    intent.putExtra("TITLE", title);
-                    intent.putExtra("AUTHOR", author);
-                    intent.putExtra("NOP", pages);
-                    intent.putExtra("STATUS", status);
-                    intent.putExtra("STARTPAGE", startPage);
-                    intent.putExtra("TARGET", target);
-                    intent.putExtra("TIME" , time);
-                    intent.putExtra("ENDPAGE" ,endPage);
-                    startActivity(intent);
-
-
                 }
 
             }
         });
     }
-
+    /**method to add current session to the database**/
     private void insertReadSession() {
         int pagesRead = endPage - startPage;
+        Toast.makeText(this, "end page : " + endPage, Toast.LENGTH_LONG).show();
+
+       Toast.makeText(this, "Pages Read : " + pagesRead, Toast.LENGTH_SHORT).show();
         if (endPage < target){
             targetHit = false;
         }
         String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.UK).format(new Date());
-        String bookID = "WUpNFe5cPHzYepKsx4Fr";
+
 
         ReadSession readSession = new ReadSession(pagesRead,targetHit, currentDate, time);
         showProgressDialog("please wait while we add your Reading Session");
         firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser()
                         .getUid())
-                .collection("books").document(bookID).collection("read_logs")
+                .collection("books").document(bookId).collection("read_logs")
                 .add(readSession).addOnSuccessListener(aVoid -> {
                     hideProgressDialog();
+
+                    //update start page - to end page of previous session.
+                    DocumentReference startPageRef = firebaseFirestore.collection("users").
+                            document(firebaseAuth.getCurrentUser().getUid()).
+                            collection("books").document(bookId);
+                    startPageRef.update("startPage", endPage + 1)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(SessionFinishedActivity.this, "read session logged successfully", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Toast.makeText(SessionFinishedActivity.this, "read session failed" + e, Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
                     Intent intent = new Intent(SessionFinishedActivity.this
                             ,ReadLoggedActivity.class);
-                    intent.putExtra("READTIME",time);
+
+                    intent.putExtra("TITLE", title);
+                    intent.putExtra("AUTHOR", author);
+                    intent.putExtra("NOP", pages);
+                    intent.putExtra("TIME",time);
                     intent.putExtra("PAGESREAD",pagesRead);
                     intent.putExtra("TARGETHIT", targetHit);
+                    intent.putExtra("BOOKID", bookId);
                     startActivity(intent);
                 })
                 .addOnFailureListener(e -> {
@@ -114,5 +132,7 @@ public class SessionFinishedActivity extends BaseActivity {
                             , Toast.LENGTH_SHORT).show();
                     hideProgressDialog();
                 });
+
+
     }
 }

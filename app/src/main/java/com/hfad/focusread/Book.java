@@ -10,15 +10,18 @@ public class Book {
     private  int numberOfPages;
     private int startPage;
     private String status;
+    private String bookId;
 
 
 
-    public Book(String bookTitle, String authorName, int numberOfPages) {
+
+    public Book(String bookTitle, String authorName, int numberOfPages, String bookId) {
         this.bookTitle = bookTitle;
         this.bookAuthor = authorName;
         this.numberOfPages = numberOfPages;
         this.startPage = 1;
         this.status = "Not Started";
+        this.bookId = bookId;
     }
 
     public Book() {
@@ -46,5 +49,9 @@ public class Book {
 
     public String getStatus() {
         return status;
+    }
+
+    public String getBookId() {
+        return bookId;
     }
 }

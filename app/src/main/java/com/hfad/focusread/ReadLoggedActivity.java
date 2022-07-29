@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class ReadLoggedActivity extends AppCompatActivity {
 
     Button viewStatsBtn, setReminderBtn, homeBtn;
-    private String title, author, status, time;
+    private String title, author, status, time, bookId;
     private  int pages, target, startPage, endPage, pagesRead;
     boolean targetHit;
     TextView pagesReadTxt, readingTimeTxt, targetHitTxt;
@@ -24,9 +24,13 @@ public class ReadLoggedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_read_logged);
         Intent intent = getIntent();
 
+        title = intent.getStringExtra("TITLE");
+        author = intent.getStringExtra("AUTHOR");
+        pages = intent.getIntExtra("NOP", 1);
         time = intent.getStringExtra("TIME");
         pagesRead = intent.getIntExtra("PAGESREAD", 1);
         targetHit = intent.getBooleanExtra("TARGETHIT", true);
+        bookId = intent.getStringExtra("BOOKID");
 
 
         pagesReadTxt = findViewById(R.id.page_read_txt);
@@ -67,6 +71,13 @@ public class ReadLoggedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ReadLoggedActivity
                         .this, StatsActivity.class);
+                intent.putExtra("TITLE", title);
+                intent.putExtra("AUTHOR", author);
+                intent.putExtra("NOP", pages);
+                intent.putExtra("TIME",time);
+                intent.putExtra("PAGESREAD",pagesRead);
+                intent.putExtra("TARGETHIT", targetHit);
+                intent.putExtra("BOOKID", bookId);
                 startActivity(intent);
             }
         });

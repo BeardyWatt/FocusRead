@@ -35,6 +35,7 @@ public class SetupReadActivity extends AppCompatActivity {
         int pages = intent.getIntExtra("NOP", 1);
         String status = intent.getStringExtra("STATUS");
         int startPage = intent.getIntExtra("STARTPAGE", 1);
+        String bookId = intent.getStringExtra("BOOKID");
 
 
         bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "
@@ -62,6 +63,7 @@ public class SetupReadActivity extends AppCompatActivity {
                 intent.putExtra("STATUS", status);
                 intent.putExtra("STARTPAGE", newStartPage);
                 intent.putExtra("TARGET", target);
+                intent.putExtra("BOOKID", bookId);
 
                 startActivity(intent);
             }

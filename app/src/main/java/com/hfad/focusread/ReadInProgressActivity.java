@@ -17,7 +17,7 @@ import java.util.TimerTask;
 
 public class ReadInProgressActivity extends Activity {
 
-    private String title, author, status;
+    private String title, author, status, bookId;
     private  int pages, target, startPage;
     private TextView timerTxt;
     private Button startPauseBtn, resetBtn, stopBtn;
@@ -38,6 +38,7 @@ public class ReadInProgressActivity extends Activity {
         status = intent.getStringExtra("STATUS");
         target = intent.getIntExtra("TARGET", 1);
         startPage = intent.getIntExtra("STARTPAGE", 1);
+        bookId = intent.getStringExtra("BOOKID");
 
         timerTxt = findViewById(R.id.timer_txt);
         startPauseBtn = findViewById(R.id.start_pause_btn);
@@ -144,6 +145,7 @@ public class ReadInProgressActivity extends Activity {
                 intent.putExtra("STARTPAGE", startPage);
                 intent.putExtra("TARGET", target);
                 intent.putExtra("TIME" , getTimerText());
+                intent.putExtra("BOOKID", bookId);
 
                 startActivity(intent);
             }

@@ -10,24 +10,26 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class AddBookActivity extends BaseActivity {
     Button btnAddBook, btnHome;
-    EditText bookTitle, authorName, numberOfPages;
+    EditText bookTitleEt, authorNameEt, numberOfPagesEt;
 
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
         btnAddBook = findViewById(R.id.add_book_btn);
-        btnHome= findViewById(R.id.return_home_btn);
+        btnHome = findViewById(R.id.return_home_btn);
 
-        bookTitle = findViewById(R.id.book_title_input_et);
-        authorName = findViewById(R.id.book_author_input_et);
-        numberOfPages = findViewById(R.id.nop_input_et);
+        bookTitleEt = findViewById(R.id.book_title_input_et);
+        authorNameEt = findViewById(R.id.book_author_input_et);
+        numberOfPagesEt = findViewById(R.id.nop_input_et);
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -43,21 +45,45 @@ public class AddBookActivity extends BaseActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AddBookActivity.this,HomeActivity.class);
+                Intent intent = new Intent(AddBookActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
 
     }
-    /** method to add a Book object to the database**/
+    /**
+     * method to add a Book object to the database
+     **/
     private void InsertBookData() {
-        String bookBookTitle = bookTitle.getText().toString();
-        String bookAuthorName = authorName.getText().toString();
-        int bookNumberOfPages = Integer.parseInt(numberOfPages.getText().toString());
+        String bookBookTitle = bookTitleEt.getText().toString();
+        String bookAuthorName = authorNameEt.getText().toString();
+        String nop = numberOfPagesEt.getText().toString();
+        if(! validForm(bookBookTitle, bookAuthorName, nop)){
+            return;
+        }
+        int bookNumberOfPages = Integer.parseInt(nop);
+        DocumentReference bookRef = firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser()
+                .getUid()).collection("books").document();
+        String bookId = bookRef.getId();
 
-        Book book = new Book(bookBookTitle, bookAuthorName, bookNumberOfPages);
+        Book book = new Book(bookBookTitle, bookAuthorName, bookNumberOfPages, bookId);
         showProgressDialog("please wait while we add your book");
-        firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser()
+        bookRef.set(book).addOnSuccessListener(aVoid -> {
+                    hideProgressDialog();
+                    Intent intent = new Intent(AddBookActivity.this
+                            , BookAddSuccessActivity.class);
+                    intent.putExtra("TITLE", bookBookTitle);
+                    intent.putExtra("AUTHOR", bookAuthorName);
+                    intent.putExtra("NOP", bookNumberOfPages);
+                    startActivity(intent);
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "Book was unsuccessfully added to the list"
+                            , Toast.LENGTH_SHORT).show();
+                    hideProgressDialog();
+                });
+
+        /*firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser()
                         .getUid())
                     .collection("books").add(book).addOnSuccessListener(aVoid -> {
                         hideProgressDialog();
@@ -72,28 +98,30 @@ public class AddBookActivity extends BaseActivity {
                         Toast.makeText(this, "Book was unsuccessfully added to the list"
                                 , Toast.LENGTH_SHORT).show();
                         hideProgressDialog();
-                    });
+                    });*/
     }
 
-   /* private boolean validForm(String bookBookTitle, String bookAuthorName, int bookNumberOfPages){
+    private boolean validForm(String bookBookTitle, String bookAuthorName, String nop){
+
 
         boolean valid = true;
-        if (TextUtils.isEmpty(bookBookTitle)){
-            bookTitle.setError("Book Title Required");
+        if (TextUtils.isEmpty(bookBookTitle)) {
+            bookTitleEt.setError("Book Title Required");
             valid = false;
         } else
-            bookTitle.setError(null);
-        if (TextUtils.isEmpty(bookAuthorName)){
-            authorName.setError("Book Author Required");
+            bookTitleEt.setError(null);
+        if (TextUtils.isEmpty(bookAuthorName)) {
+            authorNameEt.setError("Book Author Required");
             valid = false;
         } else
-            authorName.setError(null);
-        if (TextUtils.isEmpty(bookNumberOfPages)){
-            numberOfPages.setError("Number of Pages Required");
+            authorNameEt.setError(null);
+        if (TextUtils.isEmpty(nop)) {
+            numberOfPagesEt.setError("Number of Pages Required");
             valid = false;
         } else
-            numberOfPages.setError(null);
+            numberOfPagesEt.setError(null);
 
         return valid;
-    }*/
+
+    }
 }

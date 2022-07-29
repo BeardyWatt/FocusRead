@@ -66,6 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             intent.putExtra("NOP", currentBook.getNumberOfPages());
             intent.putExtra("STATUS", currentBook.getStatus());
             intent.putExtra("STARTPAGE", currentBook.getStartPage());
+            intent.putExtra("BOOKID", currentBook.getBookId());
             context.startActivity(intent);
        }
    }
