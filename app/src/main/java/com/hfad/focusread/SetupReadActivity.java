@@ -39,7 +39,7 @@ public class SetupReadActivity extends AppCompatActivity {
 
 
         bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "
-                + pages + "\n" + "Status " + status );
+                + pages);
         startFromET.setText("" + startPage);
 
 
@@ -49,7 +49,7 @@ public class SetupReadActivity extends AppCompatActivity {
                 int newStartPage = Integer.parseInt(startFromET.getText().toString());
                 String targetStr = targetET.getText().toString();
                 int target = pages;
-                if(! TextUtils.isEmpty(targetStr)){
+                if (!TextUtils.isEmpty(targetStr)) {
                     target = Integer.parseInt(targetStr);
                 }
 
@@ -84,4 +84,5 @@ public class SetupReadActivity extends AppCompatActivity {
             }
         });
     }
+
 }

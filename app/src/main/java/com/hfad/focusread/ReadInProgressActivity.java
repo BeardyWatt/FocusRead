@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatDialogFragment;
 
 import java.util.Locale;
 import java.util.Timer;
@@ -18,7 +21,7 @@ import java.util.TimerTask;
 public class ReadInProgressActivity extends Activity {
 
     private String title, author, status, bookId;
-    private  int pages, target, startPage;
+    private int pages, target, startPage;
     private TextView timerTxt;
     private Button startPauseBtn, resetBtn, stopBtn;
     private Timer timer;
@@ -27,10 +30,12 @@ public class ReadInProgressActivity extends Activity {
     private boolean timeStarted = false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_in_progess);
+
+        showReadyDialog();
+
         Intent intent = getIntent();
         title = intent.getStringExtra("TITLE");
         author = intent.getStringExtra("AUTHOR");
@@ -49,15 +54,15 @@ public class ReadInProgressActivity extends Activity {
         startPauseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              if(timeStarted == false){
-                  timeStarted = true;
-                  startPauseBtn.setText("Pause");
-                  startTimer();
-              }else{
-                  timeStarted = false;
-                  startPauseBtn.setText("Continue");
-                  timerTask.cancel();
-              }
+                if (timeStarted == false) {
+                    timeStarted = true;
+                    startPauseBtn.setText("Pause");
+                    startTimer();
+                } else {
+                    timeStarted = false;
+                    startPauseBtn.setText("Continue");
+                    timerTask.cancel();
+                }
             }
         });
         resetBtn.setOnClickListener(new View.OnClickListener() {
@@ -69,12 +74,12 @@ public class ReadInProgressActivity extends Activity {
                 resetAlert.setPositiveButton("Reset", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if(timerTask != null){
+                        if (timerTask != null) {
                             timerTask.cancel();
                             startPauseBtn.setText("Continue");
                             time = 0.0;
                             timeStarted = false;
-                            timerTxt.setText(formatTime(0,0,0));
+                            timerTxt.setText(formatTime(0, 0, 0));
                         }
                     }
                 });
@@ -95,23 +100,39 @@ public class ReadInProgressActivity extends Activity {
         });
 
 
-
     }
 
+    private void showReadyDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View inflater = getLayoutInflater().inflate(R.layout.ready_dialog, null);
+        builder.setView(inflater);
+        final AlertDialog readyDialog = builder.create();
+        Button yesBtn = inflater.findViewById(R.id.ready_btn);
+        yesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readyDialog.dismiss();
+            }
+        });
+        readyDialog.show();
+    }
+
+
+
     private void startTimer() {
-       timerTask = new TimerTask() {
-           @Override
-           public void run() {
-               runOnUiThread(new Runnable() {
-                   @Override
-                   public void run() {
-                       time ++;
-                       timerTxt.setText(getTimerText());
-                   }
-               });
-           }
-       };
-       timer.scheduleAtFixedRate(timerTask, 0, 1000);
+        timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        time++;
+                        timerTxt.setText(getTimerText());
+                    }
+                });
+            }
+        };
+        timer.scheduleAtFixedRate(timerTask, 0, 1000);
     }
 
     private String getTimerText() {
@@ -123,7 +144,7 @@ public class ReadInProgressActivity extends Activity {
     }
 
     private String formatTime(int seconds, int minutes, int hours) {
-        return String.format("%02d", hours) + ":" + String.format("%02d", minutes) +  ":" +
+        return String.format("%02d", hours) + ":" + String.format("%02d", minutes) + ":" +
                 String.format("%02d", seconds);
     }
 
@@ -137,14 +158,14 @@ public class ReadInProgressActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ReadInProgressActivity.this
-                        ,SessionFinishedActivity.class);
+                        , SessionFinishedActivity.class);
                 intent.putExtra("TITLE", title);
                 intent.putExtra("AUTHOR", author);
                 intent.putExtra("NOP", pages);
                 intent.putExtra("STATUS", status);
                 intent.putExtra("STARTPAGE", startPage);
                 intent.putExtra("TARGET", target);
-                intent.putExtra("TIME" , getTimerText());
+                intent.putExtra("TIME", getTimerText());
                 intent.putExtra("BOOKID", bookId);
 
                 startActivity(intent);
@@ -159,6 +180,8 @@ public class ReadInProgressActivity extends Activity {
                 //continue timer
             }
         });
-        stopDialog.show();
-    }
+
+
+            stopDialog.show();
+        }
 }

@@ -85,12 +85,15 @@
     <string name="continue_btn">Continue Read</string>
     <string name="end_btn">End Read</string>
 
-    <!--Strings for session_finished_Activity -->
+
     <string name="session_finished_title">Session Finished</string>
-    <string name="started_from">Started From:</string>
-    <string name="target">Target:</string>
+    <string name="started_from">Starting Page:</string>
+    <string name="target">Target End Page:</string>
     <string name="end_page">Ended on page:</string>
     <string name="log_read_btn">Log the Read</string>
+
+    <!--Strings for read_logged_activity -->
+    <string name="Pages_read">Number of Pages Read:</string>
 
     <!--Strings for session_finished_Activity -->
     <string name="read_logged_title">Well done!</string>
@@ -103,8 +106,8 @@
     <!--Strings for set_reminder_Activity -->
     <string name="set_reminder_title">Next Read Reminder</string>
     <string name="set_reminder_info">Set a reminder by simply selecting the day then the time you want to schedule your next read reminder below</string>
-    <string name="start_from">Start From</string>
-    <string name="set_target">Set Target</string>
+    <string name="start_from">Starting Page</string>
+    <string name="set_target">Set Target End Page</string>
     <string name="select_date_btn">Select Date</string>
     <string name="select_time_btn">Select Time</string>
     <string name="set_btn">Set</string>
@@ -119,12 +122,17 @@
     <string name="book_dialog_title">Focus Read</string>
     <string name="book_dialog_bio">Confirm Book Details are Correct</string>
 
-
     <!--Strings for confirm_read_logged -->
     <string name="target_hit_txt">Congratulations!! \n You it your target</string>
     <string name="target_not_hit_txt">Sorry, You didn\'t hit \n your target this time.</string>
 
     <!--Strings for stat_card -->
-    <string name="stat_reading_time_txt">Reading Time : </string>
-    <string name="stat_pages_read_txt">Pages Read : </string>
+    <string name="stat_reading_time_txt">Reading Time:</string>
+    <string name="stat_pages_read_txt">Pages Read:</string>
+
+    <!--Strings for ready_dialog -->
+    <string name="are_you_ready_title_txt">Are You Ready To Begin?</string>
+    <string name="are_you_ready_bio_txt">Make sure you have your book open and at the correct page. Also anything else you need to read, before starting the timer.</string>
+    <string name="im_ready_btn">Im Ready!</string>
+
 </resources>
