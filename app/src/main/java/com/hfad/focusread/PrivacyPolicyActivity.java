@@ -5,11 +5,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -25,26 +28,8 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_privacy_policy);
 
         textView = (TextView) findViewById(R.id.privacy_details_txt);
-
         textView.setMovementMethod(new ScrollingMovementMethod());
-
-        String data = "";
-        StringBuffer stringBuffer = new StringBuffer();
-        InputStream is = this.getResources().openRawResource(R.raw.privacy_policy);
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-
-        if(is != null){
-            try{
-                while((data=reader.readLine())!= null){
-                   stringBuffer.append(data + "n");
-                }
-                textView.setText(stringBuffer);
-                is.close();
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
+        textView.setText(Html.fromHtml(readTxt()));
 
         findViewById(R.id.privacy_back_btn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,5 +39,23 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private String readTxt() {
+        InputStream inputStream = getResources().openRawResource(R.raw.privacy_doc);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        int i;
+        try {
+            i = inputStream.read();
+            while (i != -1) {
+                byteArrayOutputStream.write(i);
+                i = inputStream.read();
+            }
+            inputStream.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return byteArrayOutputStream.toString();
     }
 }

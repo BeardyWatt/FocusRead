@@ -14,26 +14,32 @@ public class Book {
 
 
     public void setBookTitle(String bookTitle) {
+
         this.bookTitle = bookTitle;
     }
 
     public void setBookAuthor(String bookAuthor) {
+
         this.bookAuthor = bookAuthor;
     }
 
     public void setNumberOfPages(int numberOfPages) {
+
         this.numberOfPages = numberOfPages;
     }
 
     public void setStartPage(int startPage) {
+
         this.startPage = startPage;
     }
 
     public void setStatus(String status) {
+
         this.status = status;
     }
 
     public void setBookId(String bookId) {
+
         this.bookId = bookId;
     }
 
@@ -52,24 +58,29 @@ public class Book {
 
     public String getBookTitle()
     {
+
         return bookTitle;
     }
 
     public String getBookAuthor()
     {
+
         return bookAuthor;
     }
 
     public int getNumberOfPages()
     {
+
         return numberOfPages;
     }
 
     public int getStartPage() {
+
         return startPage;
     }
 
     public String getStatus() {
+
         return status;
     }
 

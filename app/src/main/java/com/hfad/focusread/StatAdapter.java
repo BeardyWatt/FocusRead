@@ -68,7 +68,7 @@ public class StatAdapter extends RecyclerView.Adapter<StatAdapter.ViewHolder> {
             readingTime.setText(currentSession.getTime());
             //LOGGER.warning("HELLO THIS IS A TEST " + readingTime.getText());
             pagesRead.setText("" + currentSession.getPagesRead());
-            if(currentSession.isTargetHit() == false){
+            if(!currentSession.isTargetHit()){
                 targetHit.setImageResource(R.drawable.target_not_hit_foreground);
             }
 

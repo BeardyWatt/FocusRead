@@ -61,7 +61,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             bookTitle.setText(currentBook.getBookTitle());
             bookAuthor.setText(currentBook.getBookAuthor());
             numberOfPages.setText(String.valueOf(currentBook.getNumberOfPages()));
-            //status.setText(currentBook.getStatus());
+            status.setText(currentBook.getStatus());
         }
 
                 public void onClick(View v) {
