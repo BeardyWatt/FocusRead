@@ -15,6 +15,8 @@ public class SetupReadActivity extends AppCompatActivity {
     Button startReadBtn, viewStatsBtn;
     EditText startFromET, targetET;
     TextView bookInfoTxt;
+    String bookId, title, author, status;
+    int pages, startPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +32,12 @@ public class SetupReadActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String title = intent.getStringExtra("TITLE");
-        String author = intent.getStringExtra("AUTHOR");
-        int pages = intent.getIntExtra("NOP", 1);
-        String status = intent.getStringExtra("STATUS");
-        int startPage = intent.getIntExtra("STARTPAGE", 1);
-        String bookId = intent.getStringExtra("BOOKID");
+        title = intent.getStringExtra("TITLE");
+        author = intent.getStringExtra("AUTHOR");
+        pages = intent.getIntExtra("NOP", 1);
+        status = intent.getStringExtra("STATUS");
+        startPage = intent.getIntExtra("STARTPAGE", 1);
+        bookId = intent.getStringExtra("BOOKID");
 
 
         bookInfoTxt.setText("Book: " + title + "\n" + "Author: " + author + "\n" + "No. of Pages: "
@@ -75,6 +77,7 @@ public class SetupReadActivity extends AppCompatActivity {
                 Intent intent = new Intent(SetupReadActivity.this,
                         StatsActivity.class);
 
+                intent.putExtra("BOOKID",bookId);
                 intent.putExtra("TITLE", title);
                 intent.putExtra("AUTHOR", author);
                 intent.putExtra("NOP", pages);

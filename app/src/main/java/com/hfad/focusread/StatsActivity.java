@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 
 public class StatsActivity extends AppCompatActivity {
 
-    String title, author, bookId, time;
+    String title, author, bookId, time, status;
     int pages, pagesRead;
     boolean targetHit;
     Button returnHomeBtn;
@@ -68,9 +68,10 @@ public class StatsActivity extends AppCompatActivity {
         pagesRead = intent.getIntExtra("PAGESREAD", 1);
         targetHit = intent.getBooleanExtra("TARGETHIT", true);
         bookId = intent.getStringExtra("BOOKID");
+        status = intent.getStringExtra("STATUS");
 
         bookStatDetailTxt.setText("Book: " + title + "\n" + "Author: " + author +
-                "\n" + "No. of Pages: "  + pages);
+                "\n" + "No. of Pages: "  + pages + "Status" + status);
 
 
         returnHomeBtn.setOnClickListener(new View.OnClickListener() {

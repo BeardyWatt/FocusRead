@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,28 +47,32 @@ public class StatAdapter extends RecyclerView.Adapter<StatAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView date, readingTime,pagesRead,targetHit;
+        TextView date, readingTime,pagesRead;
+        ImageView targetHit;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            date = (TextView) itemView.findViewById(R.id.date_txt);
-            readingTime = (TextView) itemView.findViewById(R.id.log_reading_time_txt);
-            pagesRead = (TextView) itemView.findViewById(R.id.log_pages_read_txt);
-            //targetHit = (ImageView) itemView.findViewById(R.id.stat_target_hit_img);
+            date = itemView.findViewById(R.id.date_txt);
+            readingTime = itemView.findViewById(R.id.log_reading_time_txt);
+            pagesRead = itemView.findViewById(R.id.log_pages_read_txt);
+            targetHit = itemView.findViewById(R.id.stat_target_hit_img);
             itemView.setOnClickListener(this);
         }
 
         void bindTo(ReadSession currentSession) {
             final Logger LOGGER = Logger.getLogger(StatAdapter.class.getName() );
 
-            LOGGER.warning("HELLO THIS IS A TEST " + currentSession.getPagesRead());
+            //LOGGER.warning("HELLO THIS IS A TEST " + currentSession.getPagesRead());
             date.setText(currentSession.getDate());
-            LOGGER.warning("HELLO THIS IS A TEST " + date.getText());
+            //LOGGER.warning("HELLO THIS IS A TEST " + date.getText());
             readingTime.setText(currentSession.getTime());
-            LOGGER.warning("HELLO THIS IS A TEST " + readingTime.getText());
-            //pagesRead.setText("5");
+            //LOGGER.warning("HELLO THIS IS A TEST " + readingTime.getText());
             pagesRead.setText("" + currentSession.getPagesRead());
-            //targetHit.setBoolean(currentSession.isTargetHit())
+            if(currentSession.isTargetHit() == false){
+                targetHit.setImageResource(R.drawable.target_not_hit_foreground);
+            }
+
+
         }
 
         @Override

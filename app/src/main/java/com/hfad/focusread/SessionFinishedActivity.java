@@ -125,6 +125,7 @@ public class SessionFinishedActivity extends BaseActivity {
                     intent.putExtra("PAGESREAD",pagesRead);
                     intent.putExtra("TARGETHIT", targetHit);
                     intent.putExtra("BOOKID", bookId);
+                    intent.putExtra("STATUS", status);
                     startActivity(intent);
                 })
                 .addOnFailureListener(e -> {

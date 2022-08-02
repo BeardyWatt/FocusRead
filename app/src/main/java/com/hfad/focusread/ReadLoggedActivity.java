@@ -31,6 +31,7 @@ public class ReadLoggedActivity extends AppCompatActivity {
         pagesRead = intent.getIntExtra("PAGESREAD", 1);
         targetHit = intent.getBooleanExtra("TARGETHIT", true);
         bookId = intent.getStringExtra("BOOKID");
+        status = intent.getStringExtra("STATUS");
 
 
         pagesReadTxt = findViewById(R.id.page_read_txt);
@@ -78,6 +79,7 @@ public class ReadLoggedActivity extends AppCompatActivity {
                 intent.putExtra("PAGESREAD",pagesRead);
                 intent.putExtra("TARGETHIT", targetHit);
                 intent.putExtra("BOOKID", bookId);
+                intent.putExtra("STATUS", status);
                 startActivity(intent);
             }
         });

@@ -1,13 +1,19 @@
 package com.hfad.focusread;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class PrivacyPolicyActivity extends AppCompatActivity {
 
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager;
+    ArrayList<TestClass> myArrayList = new ArrayList<TestClass>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
