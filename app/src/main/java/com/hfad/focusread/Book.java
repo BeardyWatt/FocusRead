@@ -13,7 +13,29 @@ public class Book {
     private String bookId;
 
 
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
 
+    public void setBookAuthor(String bookAuthor) {
+        this.bookAuthor = bookAuthor;
+    }
+
+    public void setNumberOfPages(int numberOfPages) {
+        this.numberOfPages = numberOfPages;
+    }
+
+    public void setStartPage(int startPage) {
+        this.startPage = startPage;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
 
     public Book(String bookTitle, String authorName, int numberOfPages, String bookId) {
         this.bookTitle = bookTitle;

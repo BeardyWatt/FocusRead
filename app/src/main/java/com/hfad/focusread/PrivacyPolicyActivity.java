@@ -28,7 +28,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
 
         textView.setMovementMethod(new ScrollingMovementMethod());
 
-        /*String data = "";
+        String data = "";
         StringBuffer stringBuffer = new StringBuffer();
         InputStream is = this.getResources().openRawResource(R.raw.privacy_policy);
 
@@ -44,7 +44,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
             }catch(Exception e){
                 e.printStackTrace();
             }
-        }*/
+        }
 
         findViewById(R.id.privacy_back_btn).setOnClickListener(new View.OnClickListener() {
             @Override
