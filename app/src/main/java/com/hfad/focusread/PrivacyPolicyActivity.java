@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class PrivacyPolicyActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    RecyclerView.LayoutManager;
-    ArrayList<TestClass> myArrayList = new ArrayList<TestClass>();
+   //RecyclerView.LayoutManager;
+    //ArrayList<TextClass> myArrayList = new ArrayList<TextClass>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

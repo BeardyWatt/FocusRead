@@ -32,9 +32,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="648dp" />
+        app:layout_constraintTop_toBottomOf="@+id/privacy_rv" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/privacy_rv"
         android:layout_width="match_parent"
         android:layout_height="574dp"
         android:layout_marginStart="8dp"
