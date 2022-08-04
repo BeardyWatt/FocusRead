@@ -49,6 +49,8 @@ public class LoginActivity extends BaseActivity {
         });
 
     }
+    /**
+     * also holding intent links to further activities forget password and register**/
     private void manageLogin() {
         emailEditText = findViewById(R.id.email_input_et);
         passwordEditText = findViewById(R.id.password_input_et);
@@ -79,7 +81,10 @@ public class LoginActivity extends BaseActivity {
         });
 
     }
-
+    /**
+     * method to check login details match with authentication detail in firebase collection user
+     * calling progress bar for loading time
+     * **/
     private void emailPasswordLogin(String email, String password) {
         if(! validateForm(email, password)){
             return;
@@ -105,6 +110,9 @@ public class LoginActivity extends BaseActivity {
             hideProgressDialog();
         });
     }
+    /**
+     * method to ensure data input is valid
+     * **/
     private boolean validateForm(String email, String password) {
         boolean valid = true;
         if (TextUtils.isEmpty(email)){
@@ -119,7 +127,9 @@ public class LoginActivity extends BaseActivity {
             passwordEditText.setError(null);
         return valid;
     }
-
+    /**
+     * method called within emailPasswordLogin
+     * **/
     private void updateUI() {
         Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
         startActivity(intent);

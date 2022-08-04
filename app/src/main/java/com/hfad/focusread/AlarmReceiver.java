@@ -10,6 +10,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
+    /** method for the reminder dialog when the notification is activated**/
     public void onReceive(Context context, Intent intent) {
         Intent i = new Intent(context, BookListActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

@@ -94,6 +94,7 @@ public class BookListActivity extends AppCompatActivity {
         });
     }
     @Override
+    /** method end the bookListener when data has beeen loaded **/
     protected void onStop() {
         super.onStop();
         bookListener.remove();

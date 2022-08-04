@@ -12,6 +12,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+/** activity to add books to the book list taking user input storing the data into the Book class
+ * sending to data to the book collection in firebase stored in a sub-collection of user**/
 
 public class AddBookActivity extends BaseActivity {
     Button btnAddBook, btnHome;
@@ -32,7 +34,6 @@ public class AddBookActivity extends BaseActivity {
         numberOfPagesEt = findViewById(R.id.nop_input_et);
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
-
         btnAddBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,8 +41,6 @@ public class AddBookActivity extends BaseActivity {
                 InsertBookData();
             }
         });
-
-
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,8 +48,8 @@ public class AddBookActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
-
     }
+
     /**
      * method to add a Book object to the database
      **/
@@ -83,24 +82,8 @@ public class AddBookActivity extends BaseActivity {
                     hideProgressDialog();
                 });
 
-        /*firebaseFirestore.collection("users").document(firebaseAuth.getCurrentUser()
-                        .getUid())
-                    .collection("books").add(book).addOnSuccessListener(aVoid -> {
-                        hideProgressDialog();
-                        Intent intent = new Intent(AddBookActivity.this
-                                ,BookAddSuccessActivity.class);
-                        intent.putExtra("TITLE",bookBookTitle);
-                        intent.putExtra("AUTHOR",bookAuthorName);
-                        intent.putExtra("NOP",bookNumberOfPages);
-                        startActivity(intent);
-                    })
-                    .addOnFailureListener(e -> {
-                        Toast.makeText(this, "Book was unsuccessfully added to the list"
-                                , Toast.LENGTH_SHORT).show();
-                        hideProgressDialog();
-                    });*/
     }
-
+    /** method to ensure data input is valid **/
     private boolean validForm(String bookBookTitle, String bookAuthorName, String nop){
 
 

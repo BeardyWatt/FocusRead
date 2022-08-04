@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 public class BaseActivity extends AppCompatActivity {
     public ProgressDialog progressDialog;
 
+    /** method to Show the progress bar, while data call is loading **/
     public void showProgressDialog(String message){
         if(progressDialog == null){
             progressDialog = new ProgressDialog(this);
@@ -26,6 +27,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     @Override
+    /** method called at the end of data loading **/
     protected void onStop() {
         super.onStop();
         hideProgressDialog();
