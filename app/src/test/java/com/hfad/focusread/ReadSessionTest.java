@@ -24,6 +24,7 @@ public class ReadSessionTest {
 
     @Test
     public void setTargetHit() {
+
     }
 
     @Test
@@ -36,8 +37,8 @@ public class ReadSessionTest {
 
     @Test
     public void getTime() {
-       // readSession.setTime(01:02:03);
-       // assert readSession.getTime()== 01:03:04;
+      //readSession.setTime();
+      //assert readSession.getTime()== 01;
     }
 
     @Test
