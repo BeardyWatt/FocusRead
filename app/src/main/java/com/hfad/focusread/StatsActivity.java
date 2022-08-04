@@ -71,7 +71,7 @@ public class StatsActivity extends AppCompatActivity {
         status = intent.getStringExtra("STATUS");
 
         bookStatDetailTxt.setText("Book: " + title + "\n" + "Author: " + author +
-                "\n" + "No. of Pages: "  + pages + "\n" + "Status" + status);
+                "\n" + "No. of Pages: "  + pages + "\n" + "Status: " + status);
 
 
         returnHomeBtn.setOnClickListener(new View.OnClickListener() {

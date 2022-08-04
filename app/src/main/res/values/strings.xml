@@ -96,7 +96,7 @@
     <string name="Pages_read">Number of Pages Read:</string>
 
     <!--Strings for session_finished_Activity -->
-    <string name="read_logged_title">Well done!</string>
+    <string name="read_logged_title">Your Read Session has been Logged</string>
     <string name="view_stats_screen_btn">View Stat Screen</string>
     <string name="set_reminder_btn">Set Reminder for Next Read Session</string>
 
