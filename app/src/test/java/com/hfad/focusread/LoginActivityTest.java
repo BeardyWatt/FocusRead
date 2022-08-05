@@ -2,10 +2,11 @@ package com.hfad.focusread;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class LoginActivityTest {
-
+    
     @Test
     public void onCreate() {
     }

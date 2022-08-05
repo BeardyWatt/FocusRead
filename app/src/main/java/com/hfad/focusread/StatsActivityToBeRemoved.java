@@ -3,6 +3,9 @@ package com.hfad.focusread;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+/**
+ * ignore this activity, im not sure why it wont delete safely
+ * **/
 
 public class StatsActivityToBeRemoved extends AppCompatActivity {
 

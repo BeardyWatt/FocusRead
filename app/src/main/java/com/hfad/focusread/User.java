@@ -1,5 +1,7 @@
 package com.hfad.focusread;
-
+/**
+ * this is the user class for the database collection users
+ * **/
 public class User {
     private String name;
     private String email;

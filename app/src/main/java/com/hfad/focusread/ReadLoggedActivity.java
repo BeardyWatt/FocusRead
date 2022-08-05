@@ -18,6 +18,10 @@ public class ReadLoggedActivity extends AppCompatActivity {
     TextView pagesReadTxt, readingTimeTxt, targetHitTxt;
     ImageView starImg;
 
+    /**
+     * details from the current book have been pulled and will be shown in a TextView
+     * along with the stats from the current read
+     * **/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,9 @@ public class ReadLoggedActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * book data will be carried over to the next Activity
+         * **/
         viewStatsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +91,9 @@ public class ReadLoggedActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * return to the home screen
+         * **/
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

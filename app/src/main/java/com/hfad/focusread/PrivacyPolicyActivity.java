@@ -16,7 +16,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-
+/**
+ * PrivacyPolicy give the user a chance to read over this documentation
+ * and can return to the register screen from here
+ * **/
 public class PrivacyPolicyActivity extends AppCompatActivity {
     //RecyclerView recyclerView;
     //RecyclerView.LayoutManager;
@@ -40,7 +43,9 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
             }
         });
     }
-
+/**
+ * this method is called to read the HTML doc file for the privacy_doc
+ * **/
     private String readTxt() {
         InputStream inputStream = getResources().openRawResource(R.raw.privacy_doc);
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();

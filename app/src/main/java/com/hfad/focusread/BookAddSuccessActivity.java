@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+/** BookAddSuccess is to show the user that the book has been added, showing the details
+ * the user can view the book list or add another book by clicking the correct buttons
+ * **/
 public class BookAddSuccessActivity extends AppCompatActivity {
     Button startReadBtn ,viewBookListBtn, addAnotherBookBtn;
     TextView bookInfoTxt;

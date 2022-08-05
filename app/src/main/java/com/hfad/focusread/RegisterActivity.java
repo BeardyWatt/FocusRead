@@ -19,7 +19,10 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-
+/**
+ * If the user needs to register a new account with focus read, they can do so in this Activity
+ * an email to activate the users account will be sent once valid details have been added
+ * **/
 public class RegisterActivity extends AppCompatActivity {
     private TextInputEditText nameInputEditText;
     private TextInputEditText emailInputEditText;
@@ -74,7 +77,10 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
+    /**
+     * sending the details to firebase and calling on validForm to ensure the details are valid
+     * if statements in place in case of system error
+     * **/
     private void createAccount(String name, String email, String password, String cPassword) {
         if (! validForm(name, email, password, cPassword)){
             return;
@@ -110,7 +116,10 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
-
+    /**
+     * providing the email that the user has provided is valid an email will be sent to the users inbox
+     * to activate their new account
+     * **/
     private void sendEmailVerification() {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -128,7 +137,9 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
+   /**
+    * method to ensure that the details added are valid when creating the new account
+    * **/
     private boolean validForm(String name, String email, String password, String cPassword){
 
         boolean valid = true;

@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+/** ConfirmDetails is a chance for the user to confirm the account details are correct, and to check
+ * that the activation email made it to their inbox
+ * the user can move to the login screen from this screen**/
 public class ConfirmRegDetailsActivity extends AppCompatActivity {
     Button goToLogin;
     TextView emailText;

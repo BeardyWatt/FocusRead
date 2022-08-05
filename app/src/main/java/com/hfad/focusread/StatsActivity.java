@@ -25,7 +25,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
-
+/**
+ *  similar to the book list this will show the cards of stat details from the read sessions logged
+ *  in the firebase database for the current book selected.
+ * **/
 public class StatsActivity extends AppCompatActivity {
 
     String title, author, bookId, time, status;
@@ -91,7 +94,7 @@ public class StatsActivity extends AppCompatActivity {
         statList.clear();
         final Logger LOGGER = Logger.getLogger(StatsActivity.class.getName() );
 
-        LOGGER.warning("HELLO THIS IS A TEST" + bookId);
+        //LOGGER.warning("HELLO THIS IS A TEST" + bookId);
         final CollectionReference collection = firebaseFirestore.collection("users")
                 .document(firebaseAuth.getCurrentUser().getUid()).collection("books")
                 .document(bookId).collection("read_logs");

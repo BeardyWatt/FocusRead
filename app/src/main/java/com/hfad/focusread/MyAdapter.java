@@ -13,7 +13,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-
+/**
+ * an adapter for the book list recyclerView
+ * pulling the data from the firebase database and calling the Book class
+ * setting the details to the current book.
+ * **/
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     Context context;

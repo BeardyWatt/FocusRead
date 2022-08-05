@@ -1,5 +1,7 @@
 package com.hfad.focusread;
-
+/**
+ * Reminder class for the notification setting attributes
+ * **/
 public class Reminder {
     private  String date, time;
 

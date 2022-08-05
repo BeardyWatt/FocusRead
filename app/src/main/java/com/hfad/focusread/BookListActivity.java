@@ -24,7 +24,9 @@ import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-
+/** BookList desplays a clickable list of the book currently in the data base
+ * users can click their chosen book to then start a reading session
+ * **/
 public class BookListActivity extends AppCompatActivity {
     Button addNewBookBtn;
     RecyclerView recyclerView;
@@ -63,7 +65,11 @@ public class BookListActivity extends AppCompatActivity {
     }
 
     @Override
-    /** method to add a read data from the firebase database **/
+    /** method to add a read data from the firebase database store as a subclass of user called books
+     * to be viewable in the cards in the recycler
+     * the for loop pulls the items from the list that are pulled from the firebase database
+     * the if is there in the chance that the list is currently empty and the TextView will be visable
+     * **/
     protected void onStart() {
         super.onStart();
         bookList.clear();
@@ -94,7 +100,9 @@ public class BookListActivity extends AppCompatActivity {
         });
     }
     @Override
-    /** method end the bookListener when data has beeen loaded **/
+    /**
+     *  method end the bookListener when data has beeen loaded
+     *  **/
     protected void onStop() {
         super.onStop();
         bookListener.remove();

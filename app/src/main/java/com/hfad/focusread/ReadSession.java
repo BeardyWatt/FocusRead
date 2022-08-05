@@ -1,7 +1,9 @@
 package com.hfad.focusread;
 
 import java.util.Date;
-
+/**
+ * class ReadSession containing the attributes for the list
+ * **/
 public class ReadSession {
     private int pagesRead;
     private boolean targetHit;
@@ -56,6 +58,6 @@ public class ReadSession {
 
     public void setTime(int time) {
 
-        this.time = time;
+        //this.time = time;
     }
 }

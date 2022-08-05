@@ -13,7 +13,9 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-
+/** if the user forgets their log in details, from this screen the user can have a reset password
+ * emailed to there registered email account
+ * **/
 public class ForgotPasswordActivity extends AppCompatActivity {
     Button sendBtn, goToLogin;
     FirebaseAuth firebaseAuth;

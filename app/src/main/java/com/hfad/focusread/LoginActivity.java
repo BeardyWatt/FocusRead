@@ -10,7 +10,9 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
+/**
+ * Login will be the first screen for the user if they are not already logged in
+ * if the user has an account they can **/
 public class LoginActivity extends BaseActivity {
 
     private static final String TAG = "loginActivity";
@@ -50,7 +52,9 @@ public class LoginActivity extends BaseActivity {
 
     }
     /**
-     * also holding intent links to further activities forget password and register**/
+     * method to take the login details and check them against the users stored in the database
+     * also holding intent links to further activities forget password and register
+     * will be called in the onCreate**/
     private void manageLogin() {
         emailEditText = findViewById(R.id.email_input_et);
         passwordEditText = findViewById(R.id.password_input_et);

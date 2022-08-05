@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.ProgressBar;
-
+/** BaseActivity holds the methods for the progress bar
+ * users will see this if data is taking a while to load to or from the database
+ * **/
 public class BaseActivity extends AppCompatActivity {
     public ProgressDialog progressDialog;
 

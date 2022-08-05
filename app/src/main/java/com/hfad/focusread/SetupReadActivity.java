@@ -9,7 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+/**
+ * Setting up the read from this activity can be done by setting the start page, if this is the
+ * first read of this book the start page will default as page 1
+ * if you are returning the default page will be the page you ended on in the previous session.
+ * users will also have to provide their target end page, if left blank the default will be the
+ * end page of the book.
+ * **/
 public class SetupReadActivity extends AppCompatActivity {
 
     Button startReadBtn, viewStatsBtn;

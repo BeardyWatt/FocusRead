@@ -12,7 +12,10 @@ import android.widget.TextView;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
+/**
+ * UserAgreement give the user a chance to read over this documentation
+ * and can return to the register screen from here
+ * **/
 public class UserAgreementActivity extends AppCompatActivity {
 
     TextView textView;
@@ -35,6 +38,9 @@ public class UserAgreementActivity extends AppCompatActivity {
             }
         });
     }
+    /**
+     * this method is called to read the HTML doc file for the user_doc
+     * **/
     private String readTxt() {
         InputStream inputStream = getResources().openRawResource(R.raw.user_doc);
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();

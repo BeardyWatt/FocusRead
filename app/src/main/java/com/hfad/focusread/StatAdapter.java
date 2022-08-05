@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
-
+/**
+ * Adapter for the readSession recyclerView to show the stat list
+ * **/
 public class StatAdapter extends RecyclerView.Adapter<StatAdapter.ViewHolder> {
 
     Context context;

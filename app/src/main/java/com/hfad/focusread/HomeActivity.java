@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
-/** Home Screen with intent buttons to navigate to further activities**/
+/** Home Screen with intent buttons to navigate to further activities
+ * users can log out from this screen bringing them back to the log in screen
+ * if the user is logged in already they will be brought to this screen upon opening the app
+ * **/
 public class HomeActivity extends AppCompatActivity {
     Button logoutBtn, viewBookListBtn, addNewBookBtn, readReminderBtn, viewStatsBtn;
 

@@ -31,6 +31,7 @@ import com.hfad.focusread.databinding.ActivityMainBinding;
 
 import java.nio.channels.Channel;
 import java.util.Calendar;
+import java.util.logging.Logger;
 
 public class SetReadReminderActivity extends AppCompatActivity {
     Button dateBtn, timeBtn, setBtn, cancelBtn;
@@ -43,6 +44,7 @@ public class SetReadReminderActivity extends AppCompatActivity {
     private Calendar calendar;
     private AlarmManager alarmManager;
     private PendingIntent pendingIntent;
+    private NotificationChannel channel = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,7 +134,6 @@ public class SetReadReminderActivity extends AppCompatActivity {
             CharSequence name = "focusReadReminderChannel";
             String description = "ChannelForAlarmManger";
             int importance = NotificationManager.IMPORTANCE_HIGH;
-            NotificationChannel channel = null;
             channel = new NotificationChannel("focusRead", name, importance);
             channel.setDescription(description);
             NotificationManagerCompat notificationManager = getSystemService(NotificationManagerCompat.class);

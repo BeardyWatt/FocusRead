@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
+/**
+ * this is the first activity to run when opening the application
+ * this splash screen will run for 3 seconds then bring up the next screen
+ * **/
 public class MainActivity extends AppCompatActivity {
 
 

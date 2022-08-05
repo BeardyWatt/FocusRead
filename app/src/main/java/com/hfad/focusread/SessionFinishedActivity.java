@@ -21,7 +21,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-
+/**
+ * when the user has finished their read session they can check the target they set and input the
+ * page they ended their session on then proceed.
+ * moving forward will log the details from the read session in the firebase database.
+ * **/
 public class SessionFinishedActivity extends BaseActivity {
     Button logTheReadBtn;
     EditText endedOnET;
@@ -78,7 +82,9 @@ public class SessionFinishedActivity extends BaseActivity {
             }
         });
     }
-    /**method to add current session to the database**/
+    /**method to add current session to the database
+     * the data will be carried over to the next Activity
+     * Toast pop ups are called to ensure that the data being sent is correct**/
     private void insertReadSession() {
         int pagesRead = endPage - startPage + 1;
         Toast.makeText(this, "end page : " + endPage, Toast.LENGTH_LONG).show();
