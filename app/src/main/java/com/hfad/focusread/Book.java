@@ -1,7 +1,5 @@
 package com.hfad.focusread;
-import com.google.firebase.database.IgnoreExtraProperties;
 
-@IgnoreExtraProperties
 
 /** class Book containing the attributes for the list**/
 public class Book {
