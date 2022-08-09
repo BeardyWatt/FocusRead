@@ -117,16 +117,15 @@ public class SetReadReminderActivity extends AppCompatActivity {
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this , AlarmReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(this , 0, intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-        else
-            { pendingIntent = PendingIntent.getActivity (this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT); }*/
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                 AlarmManager.INTERVAL_DAY, pendingIntent);
         Toast.makeText(this, "Reminder Set Successfully", Toast.LENGTH_SHORT).show();
 
     }
+
+
 
     private void showTimePicker() {
         timePicker = new MaterialTimePicker.Builder().setTimeFormat(TimeFormat.CLOCK_12H)
@@ -149,7 +148,7 @@ public class SetReadReminderActivity extends AppCompatActivity {
                     timeBtn.setText(String.format("%02d", timePicker.getHour()) +":" + String.format("%02d", timePicker.getMinute()) + "AM");
                 }
                 calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
-                calendar.set(Calendar.MINUTE, timePicker.getMinute());
+                calendar.set(Calendar.MINUTE, timePicker.getMinute() - 1);
                 calendar.set(Calendar.SECOND, 0);
                 calendar.set(Calendar.MILLISECOND, 0);
 

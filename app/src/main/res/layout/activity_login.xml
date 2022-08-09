@@ -30,6 +30,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
+        android:textColorHint="@color/f_purple"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +42,8 @@
             android:layout_height="wrap_content"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/black"
+            android:textColor="@color/f_purple"
+            android:textColorHint="@color/purple_700"
             android:textCursorDrawable="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -52,6 +54,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
+        android:textColorHint="@color/f_purple"
         app:boxBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +66,11 @@
             android:layout_height="wrap_content"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColor="@color/black" />
+            android:shadowColor="@color/f_purple"
+            android:textColor="@color/f_purple"
+            android:textColorHighlight="@color/f_purple"
+            android:textColorHint="@color/f_purple"
+            android:textColorLink="@color/f_purple" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

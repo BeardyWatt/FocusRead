@@ -15,7 +15,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         Intent i = new Intent(context, BookListActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, i, 0);
-
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "focusRead")
                 .setSmallIcon(R.drawable.fr_logo2).setContentTitle("Focus Read").setContentText("Alarm")
                 .setAutoCancel(true).setDefaults(NotificationCompat.DEFAULT_ALL).setPriority(NotificationCompat
