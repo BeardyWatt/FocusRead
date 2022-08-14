@@ -72,13 +72,14 @@
 
     <Button
         android:id="@+id/set_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:text="@string/set_btn"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/select_time_btn" />
 
@@ -87,7 +88,7 @@
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/select_time_btn"
@@ -101,10 +102,28 @@
 
     <Button
         android:id="@+id/cancel_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
         android:text="Cancel"
+        app:layout_constraintBaseline_toBaselineOf="@+id/set_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/return_home_btn"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/f_purple"
+        android:text="@string/home_btn"
+        android:textSize="16sp"
+        app:icon="@drawable/rtn_home_icon_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

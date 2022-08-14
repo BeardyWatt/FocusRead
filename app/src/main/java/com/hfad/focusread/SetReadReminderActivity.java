@@ -37,11 +37,7 @@ import java.util.Calendar;
 import java.util.logging.Logger;
 
 public class SetReadReminderActivity extends AppCompatActivity {
-    Button dateBtn, timeBtn, setBtn, cancelBtn;
-    String  date, time;
-    FirebaseFirestore firebaseFirestore;
-    FirebaseAuth firebaseAuth;
-    int year, month, day, hour, minute;
+    Button dateBtn, timeBtn, setBtn, cancelBtn, homeBtn;
     private ActivityMainBinding binding;
     private MaterialTimePicker timePicker;
     private MaterialDatePicker datePicker;
@@ -60,6 +56,7 @@ public class SetReadReminderActivity extends AppCompatActivity {
         dateBtn = findViewById(R.id.select_date_btn);
         setBtn = findViewById(R.id.set_btn);
         cancelBtn = findViewById(R.id.cancel_btn);
+        homeBtn = findViewById(R.id.return_home_btn);
 
         timeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +84,18 @@ public class SetReadReminderActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * return to the home screen
+         * **/
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SetReadReminderActivity.this,HomeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     private void showDatePicker() {
        datePicker = MaterialDatePicker.Builder.datePicker().setTitleText("Select Reminder Date").build();
@@ -116,13 +124,16 @@ public class SetReadReminderActivity extends AppCompatActivity {
     private void setAlarm() {
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this , AlarmReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(this , 0, intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
-
-        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+        //pendingIntent = PendingIntent.getBroadcast(this , 0, intent, 0);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            pendingIntent = PendingIntent.getBroadcast(this , 0, intent, PendingIntent.FLAG_IMMUTABLE|PendingIntent.FLAG_UPDATE_CURRENT);
+        } else {
+            pendingIntent = PendingIntent.getBroadcast(this , 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, (calendar.getTimeInMillis() - 70),
                 AlarmManager.INTERVAL_DAY, pendingIntent);
-        Toast.makeText(this, "Reminder Set Successfully", Toast.LENGTH_SHORT).show();
 
+        Toast.makeText(this, "Reminder Set Successfully", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -148,7 +159,7 @@ public class SetReadReminderActivity extends AppCompatActivity {
                     timeBtn.setText(String.format("%02d", timePicker.getHour()) +":" + String.format("%02d", timePicker.getMinute()) + "AM");
                 }
                 calendar.set(Calendar.HOUR_OF_DAY, timePicker.getHour());
-                calendar.set(Calendar.MINUTE, timePicker.getMinute() - 1);
+                calendar.set(Calendar.MINUTE, timePicker.getMinute());
                 calendar.set(Calendar.SECOND, 0);
                 calendar.set(Calendar.MILLISECOND, 0);
 

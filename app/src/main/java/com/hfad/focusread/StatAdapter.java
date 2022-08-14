@@ -47,7 +47,7 @@ public class StatAdapter extends RecyclerView.Adapter<StatAdapter.ViewHolder> {
         return statList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView date, readingTime,pagesRead;
         ImageView targetHit;
@@ -58,7 +58,7 @@ public class StatAdapter extends RecyclerView.Adapter<StatAdapter.ViewHolder> {
             readingTime = itemView.findViewById(R.id.log_reading_time_txt);
             pagesRead = itemView.findViewById(R.id.log_pages_read_txt);
             targetHit = itemView.findViewById(R.id.stat_target_hit_img);
-            itemView.setOnClickListener(this);
+            //itemView.setOnClickListener(this);
         }
 
         void bindTo(ReadSession currentSession) {
@@ -77,15 +77,5 @@ public class StatAdapter extends RecyclerView.Adapter<StatAdapter.ViewHolder> {
 
         }
 
-        @Override
-        public void onClick(View v) {
-            ReadSession currentSession = statList.get(getAdapterPosition());
-            Intent intent = new Intent(context,ReadLoggedActivity.class);
-            intent.putExtra("DATE", currentSession.getDate());
-            intent.putExtra("READTIME", currentSession.getTime());
-            intent.putExtra("PAGESREAD",currentSession.getPagesRead());
-            intent.putExtra("TARGETHIT", currentSession.isTargetHit());
-            context.startActivity(intent);
-        }
     }
 }

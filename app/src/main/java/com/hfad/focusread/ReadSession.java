@@ -55,9 +55,7 @@ public class ReadSession {
 
         return time;
     }
-
-    public void setTime(int time) {
-
-        //this.time = time;
+    public void setTime(String time){
+        this.time = time;
     }
 }
