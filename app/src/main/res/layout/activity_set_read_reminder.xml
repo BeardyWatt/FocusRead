@@ -13,7 +13,7 @@
         android:layout_width="156dp"
         android:layout_height="93dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -36,7 +36,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fs_logo_image" />
+        app:layout_constraintTop_toBottomOf="@+id/fs_logo_image"
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/set_reminder_bio_txt"
@@ -59,7 +60,7 @@
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@color/f_purple"
         android:text="@string/select_date_btn"
@@ -105,28 +106,30 @@
         android:layout_width="120dp"
         android:layout_height="70dp"
         android:layout_marginStart="24dp"
-        android:text="Cancel"
-        app:layout_constraintBaseline_toBaselineOf="@+id/set_btn"
+        android:layout_marginTop="8dp"
+        android:text="@string/cancel_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.792"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_time_btn" />
 
     <Button
         android:id="@+id/return_home_btn"
         android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/f_purple"
         android:text="@string/home_btn"
         android:textSize="16sp"
         app:icon="@drawable/rtn_home_icon_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/set_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/cancel_btn"
+        app:layout_constraintVertical_bias="0.531" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

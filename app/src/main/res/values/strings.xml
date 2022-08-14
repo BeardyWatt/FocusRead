@@ -111,6 +111,7 @@
     <string name="select_date_btn">Select Date</string>
     <string name="select_time_btn">Select Time</string>
     <string name="set_btn">Set</string>
+    <string name="cancel_btn">Cancel</string>
 
     <!--Strings for end_read_dialog -->
     <string name="end_dialog_title">Focus Read</string>
